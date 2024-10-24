@@ -6,6 +6,14 @@ use CodeIgniter\Router\RouteCollection;
  * @var RouteCollection $routes
  */
 $routes->get('/', 'Home::index');
+$routes->get('/dashboard', function(){return view('pages/dashboard');});
+$routes->get('/signin', function(){return view('pages/signin');});
+$routes->get('/signup', function(){return view('pages/signup');});
+$routes->get('/reset', function(){return view('pages/reset');});
+$routes->get('/categories', function(){return view('pages/categories');});
+$routes->get('/budget', function(){return view('pages/budget');});
+$routes->get('/budget2', function(){return view('pages/budget2');});
+$routes->get('/expenses', function(){return view('pages/expenses');});
 $routes->get('/wallets', function(){return view('pages/wallets');});
 $routes->get('/budgets', function(){return view('pages/budgets');});
 $routes->get('/goals', function(){return view('pages/goals');});

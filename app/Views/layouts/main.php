@@ -149,7 +149,7 @@
             <div class="menu">
                 <ul>
                     <li>
-                        <a href="/">
+                        <a href="/dashboard">
                             <span>
                                 <i class="fi fi-rr-dashboard"></i>
                             </span>
@@ -161,31 +161,23 @@
                             <span>
                                 <i class="fi fi-rr-wallet"></i>
                             </span>
-                            <span class="nav-text">Wallets</span>
+                            <span class="nav-text">Wallet</span>
                         </a>
                     </li>
                     <li>
-                        <a href="budgets">
+                        <a href="categories">
+                            <span>
+                                <i class="fi fi-rr-layers"></i>
+                            </span>
+                            <span class="nav-text">Categories</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/expenses">
                             <span>
                                 <i class="fi fi-rr-donate"></i>
                             </span>
-                            <span class="nav-text">Budgets</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="goals">
-                            <span>
-                                <i class="fi fi-sr-bullseye-arrow"></i>
-                            </span>
-                            <span class="nav-text">Goals</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="profile">
-                            <span>
-                                <i class="fi fi-rr-user"></i>
-                            </span>
-                            <span class="nav-text">Profile</span>
+                            <span class="nav-text">Expenses</span>
                         </a>
                     </li>
                     <li>
@@ -197,6 +189,14 @@
                         </a>
                     </li>
                     <li>
+                        <a href="profile">
+                            <span>
+                                <i class="fi fi-rr-user"></i>
+                            </span>
+                            <span class="nav-text">Profile</span>
+                        </a>
+                    </li>
+                    <!-- <li>
                         <a href="support">
                             <span>
                                 <i class="fi fi-rr-user-headset"></i>
@@ -211,7 +211,7 @@
                             </span>
                             <span class="nav-text">Affiliates</span>
                         </a>
-                    </li>
+                    </li> -->
                     <li>
                         <a href="settings">
                             <span>

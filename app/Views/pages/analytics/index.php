@@ -8,12 +8,12 @@ Summary
 Analytics
 <?= $this->endSection() ?>
 
-<?= $this->section('content') ?>
+<?= $this->section('analytics-content') ?>
 <div class="row">
                             <div class="col-xl-3 col-sm-6">
                                 <div class="analytics-widget">
-                                    <div class="widget-icon me-3 bg-primary"><span><i
-                                                class="fi fi-rr-mobile"></i></span>
+                                    <div class="widget-icon me-3 bg-primary"><span>
+                                        <i class="fi fi-rr-mobile"></i></span>
                                     </div>
                                     <div class="widget-content">
                                         <p>Daily Average</p>
@@ -64,5 +64,5 @@ Analytics
                                     </div>
                                 </div>
                             </div>
-</div>
+                        </div>
 <?= $this->endSection() ?>

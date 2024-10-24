@@ -17744,7 +17744,7 @@ button:hover, button:focus, button:active,
 }
 
 .balance-trend {
-  margin-bottom: 20px;
+  /* margin-bottom: 20px; */
 }
 .balance-trend h4 span, .balance-trend .h4 span {
   display: inline-block;
