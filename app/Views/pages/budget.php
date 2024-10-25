@@ -15,7 +15,7 @@ Monthly Budget
                                     <h4 class="card-title ">Set your monthly budget</h4>
                                 </div>
                                 <div class="card-body">
-                                    <form action="bank-add-successful.html">
+                                    <form action="budget2">
                                         <div class="row">
                                             <div class="mb-3 col-xl-12">
                                                 <label class="form-label">Amount </label>

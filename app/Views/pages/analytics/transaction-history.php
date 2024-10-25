@@ -11,35 +11,6 @@ Transaction History
 <?= $this->section('analytics-content') ?>
 <div class="row">
     <div class="col-xl-12">
-        <div class="card">
-            <div class="card-header">
-                <h4 class="card-title">Add New Transaction</h4>
-            </div>
-            <div class="card-body">
-                <div class="create-new-category">
-                                            <form class="row">
-                                                <div class="mb-3 col-5">
-                                                    <label class="form-label">Category </label>
-                                                    <select class="form-select">
-                                                        <option selected="">Choose...</option>
-                                                        <option>Income</option>
-                                                        <option>Expenses</option>
-                                                    </select>
-                                                </div>
-                                                <div class="mb-3 col-5">
-                                                    <label class="form-label">Description </label>
-                                                    <input type="textarea" class="form-control" placeholder="Brief description">
-                                                </div>
-                                                <div class="col-2">
-                                                    <label class="form-label">Action </label>
-                                                    <button class="btn btn-danger w-100">Add Expense</button>
-                                                </div>
-                                            </form>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="col-xl-12">
                                 <div class="card">
                                     <div class="card-header">
                                         <h4 class="card-title">Transaction History</h4>

@@ -57,32 +57,6 @@ Settings
                                     </div>
                                 </div>
     </div>
-    <div class="col-xxl-8 col-xl-6">
-                                <div class="card">
-                                    <div class="card-header">
-                                        <h4 class="card-title">VERIFY &amp; UPGRADE </h4>
-                                    </div>
-                                    <div class="card-body">
-                                        <h5>Account Status :
-                                            <span class="text-warning"> Pending</span>
-                                        </h5>
-                                        <p>Your account is unverified. Get verified to enable funding, trading, and
-                                            withdrawal.</p>
-                                        <a href="#" class="btn btn-primary">Get Verified</a>
-                                    </div>
-                                </div>
-    </div>
-    <div class="col-xxl-4 col-xl-6">
-                                <div class="card">
-                                    <div class="card-header">
-                                        <h4 class="card-title">Earn 30% Commission </h4>
-                                    </div>
-                                    <div class="card-body">
-                                        <p>Refer your friends and earn 30% of <br> their trading fees.</p>
-                                        <a href="affiliates.html" class="btn btn-primary">Referral Program</a>
-                                    </div>
-                                </div>
-    </div>
     <div class="col-xxl-12">
                                 <div class="card">
                                     <div class="card-header flex-row">

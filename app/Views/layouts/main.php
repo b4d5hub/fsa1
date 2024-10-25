@@ -123,9 +123,9 @@
                                             <span><i class="fi fi-rr-user"></i></span>
                                             Profile
                                         </a>
-                                        <a class="dropdown-item" href="/wallets">
+                                        <a class="dropdown-item" href="/budget">
                                             <span><i class="fi fi-rr-wallet"></i></span>
-                                            Wallets
+                                            Budget
                                         </a>
                                         <a class="dropdown-item" href="/settings">
                                             <span><i class="fi fi-rr-settings"></i></span>
@@ -157,11 +157,11 @@
                         </a>
                     </li>
                     <li>
-                        <a href="wallets">
+                        <a href="budget">
                             <span>
                                 <i class="fi fi-rr-wallet"></i>
                             </span>
-                            <span class="nav-text">Wallet</span>
+                            <span class="nav-text">Budget</span>
                         </a>
                     </li>
                     <li>
