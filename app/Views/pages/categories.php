@@ -14,7 +14,7 @@ Categories
                                 <div class="col-xl-4">
                                     <div class="page-title-content">
                                         <h3>Dashboard</h3>
-                                        <p class="mb-2">Welcome Ekash Finance Management</p>
+                                        <p class="mb-2">Welcome TrackWise Finance Management</p>
                                     </div>
                                 </div>
                                 <div class="col-auto">

@@ -16,7 +16,7 @@ Analytics
                                         <i class="fi fi-rr-mobile"></i></span>
                                     </div>
                                     <div class="widget-content">
-                                        <p>Daily Average</p>
+                                        <p>Lifetime Expense</p>
                                         <h3>$5470.36</h3>
                                     </div>
                                 </div>
@@ -27,8 +27,8 @@ Analytics
                                                 class="fi fi-rr-replace"></i></span>
                                     </div>
                                     <div class="widget-content">
-                                        <p>Change</p>
-                                        <h3>+47.36%</h3>
+                                        <p>Monthly Avg Income</p>
+                                        <h3>$12470.36</h3>
                                     </div>
                                 </div>
                             </div>
@@ -38,7 +38,7 @@ Analytics
                                                 class="fi fi-rs-receipt"></i></span>
                                     </div>
                                     <div class="widget-content">
-                                        <p>Total Transaction</p>
+                                        <p>Total Transactions</p>
                                         <h3>354</h3>
                                     </div>
                                 </div>

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Ekash : Personal Finance Management Admin Dashboard HTML Template</title>
+    <title>TrackWise : Personal Finance Management App</title>
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="./images/favicon.png">
     <!-- Custom Stylesheet -->
@@ -273,7 +273,7 @@
                         <div class="features-content">
                             <i class="fi fi-rr-settings-sliders"></i>
                             <h5>150+ UI Components</h5>
-                            <p>Almost 150+ UI Components being given with Ekash Admin Pack.</p>
+                            <p>Almost 150+ UI Components being given with TrackWise Admin Pack.</p>
                         </div>
                     </div>
                     <div class="col-sm-6 col-md-4 col-lg-3">

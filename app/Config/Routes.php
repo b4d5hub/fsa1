@@ -25,7 +25,7 @@ $routes->get('/analytics-income-vs-expenses', function(){return view('pages/anal
 $routes->get('/analytics-balance', function(){return view('pages/analytics/balance');});
 $routes->get('/analytics-transaction-history', function(){return view('pages/analytics/transaction-history');});
 $routes->get('/settings', function(){return view('pages/settings/index');});
-$routes->get('/settings-general', function(){return view('pages/settings/general');});
+// $routes->get('/settings-general', function(){return view('pages/settings/general');});
 $routes->get('/settings-profile', function(){return view('pages/settings/profile');});
 $routes->get('/settings-categories', function(){return view('pages/settings/categories');});
 $routes->get('/support', function(){return view('pages/support');});

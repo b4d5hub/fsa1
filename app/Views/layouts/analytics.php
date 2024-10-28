@@ -34,8 +34,6 @@ Analytics
                             <a href="./analytics">Analytics</a>
                             <a href="./analytics-expenses">Expenses</a>
                             <a href="./analytics-income">Income</a>
-                            <a href="./analytics-income-vs-expenses">Income vs Expenses</a>
-                            <a href="./analytics-balance">Balance</a>
                             <a href="./analytics-transaction-history">Transaction History</a>
                         </div>
                         <?= $this->renderSection('analytics-content') ?>
