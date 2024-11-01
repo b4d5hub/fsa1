@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Ekash : Personal Finance Management Admin Dashboard HTML Template</title>
+    <title>TrackWise : Personal Finance Management App</title>
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="./images/favicon.png">
     <!-- Custom Stylesheet -->
@@ -35,7 +35,7 @@
                                         <a href="/">
                                             <img src="/images/logo-white.png" alt="" width="30" /></a>
                                     </div>
-                                    <h3>Welcome to Ekash</h3>
+                                    <h3>Welcome to TrackWise</h3>
                                 </div>
                                 <div class="privacy-social">
                                     <div class="privacy-link"><a href="#">Have an issue with 2-factor

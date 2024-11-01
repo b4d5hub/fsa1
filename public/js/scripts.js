@@ -58,3 +58,38 @@ function themeToggle() {
         localStorage.setItem("theme", "dark-theme");
     }
 }
+
+// open answer faqs
+var questionItem = document.querySelectorAll('.question-item');
+if (questionItem) {
+  questionItem.forEach(function (item, index) {
+    var titleItem = item.querySelector('.question-item-main');
+    var icon = item.querySelector('i');
+    titleItem.addEventListener('click', function () {
+      item.classList.toggle('open');
+      if (item.classList.contains('open')) {
+        setTimeout(function () {
+          icon.classList.replace('fi-rr-plus', 'fi-rr-minus');
+        }, 200);
+      } else {
+        setTimeout(function () {
+          icon.classList.replace('fi-rr-minus', 'fi-rr-plus');
+        }, 200);
+      }
+      removeOpen(index);
+    });
+    if (item.classList.contains('open')) {
+      icon.classList.replace('fi-rr-plus', 'fi-rr-minus');
+    } else {
+      icon.classList.replace('fi-rr-minus', 'fi-rr-plus');
+    }
+  });
+}
+function removeOpen(index1) {
+  questionItem.forEach(function (item2, index2) {
+    if (index1 != index2) {
+      item2.classList.remove('open');
+      item2.querySelector('i').classList.replace('fi-rr-minus', 'fi-rr-plus');
+    }
+  });
+}
