@@ -58,22 +58,24 @@ Settings
                                 </div>
     </div> -->
     <div class="col-xl-12">
-                                <div class="card">
-                                    <div class="card-header">
-                                        <h4 class="card-title">Preferences</h4>
-                                    </div>
-                                    <div class="card-body">
-                                        <form action="">
-                                            <div class="row">
-                                                <div class="mb-3 col-6">
-                                                    <label class="form-label">Primary Currency</label>
-                                                    <select class="form-select">
-                                                        <option>USD</option>
-                                                        <option>CAD</option>
-                                                        <option>Euro</option>
-                                                    </select>
-                                                </div>
-                                                <div class="mb-3 col-6">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="card-title">Preferences</h4>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <div class="row">
+                        <div class="mb-3 col-12">
+                            <label class="form-label">Primary Currency</label>
+                            <select class="form-select">
+                                <option>MAD</option>
+                                <option>USD</option>
+                                <option>EUR</option>
+                                <option>AED</option>
+                                <option>GBP</option>
+                            </select>
+                        </div>
+                        <!-- <div class="mb-3 col-6">
                                                     <label class="form-label">Time Zone</label>
                                                     <select class="form-select">
                                                         <option timeZoneId="1" gmtAdjustment="GMT-12:00"
@@ -340,91 +342,91 @@ Settings
                                                             useDaylightTime="0" value="13">(GMT+13:00) Nuku'alofa
                                                         </option>
                                                     </select>
-                                                </div>
-                                                <div class="mb-3">
-                                                    <button class="btn btn-primary pl-5 pr-5">Save</button>
-                                                </div>
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
+                                                </div> -->
+                        <div class="mb-3">
+                            <button class="btn btn-primary pl-5 pr-5">Save</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
     </div>
     <div class="col-xxl-12">
-                                <div class="card">
-                                    <div class="card-header flex-row">
-                                        <h4 class="card-title">Information </h4>
-                                        <a class="btn btn-primary" href="/settings-profile.html">Edit</a>
-                                    </div>
-                                    <div class="card-body">
-                                        <form class="row">
-                                            <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6">
-                                                <div class="user-info">
-                                                    <span>USER ID</span>
-                                                    <h4>818778</h4>
-                                                </div>
-                                            </div>
-                                            <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6">
-                                                <div class="user-info">
-                                                    <span>EMAIL ADDRESS</span>
-                                                    <h4>email@example.com</h4>
-                                                </div>
-                                            </div>
-                                            <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6">
-                                                <div class="user-info">
-                                                    <span>COUNTRY OF RESIDENCE</span>
-                                                    <h4>Bangladesh</h4>
-                                                </div>
-                                            </div>
-                                            <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6">
-                                                <div class="user-info">
-                                                    <span>JOINED SINCE</span>
-                                                    <h4>20/10/2020</h4>
-                                                </div>
-                                            </div>
-                                            <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6">
-                                                <div class="user-info">
-                                                    <span>TYPE</span>
-                                                    <h4>Personal</h4>
-                                                </div>
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
+        <div class="card">
+            <div class="card-header flex-row">
+                <h4 class="card-title">Information </h4>
+                <a class="btn btn-primary" href="/settings-profile.html">Edit</a>
+            </div>
+            <div class="card-body">
+                <form class="row">
+                    <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6">
+                        <div class="user-info">
+                            <span>USER ID</span>
+                            <h4>818778</h4>
+                        </div>
+                    </div>
+                    <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6">
+                        <div class="user-info">
+                            <span>EMAIL ADDRESS</span>
+                            <h4>email@example.com</h4>
+                        </div>
+                    </div>
+                    <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6">
+                        <div class="user-info">
+                            <span>COUNTRY OF RESIDENCE</span>
+                            <h4>Bangladesh</h4>
+                        </div>
+                    </div>
+                    <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6">
+                        <div class="user-info">
+                            <span>JOINED SINCE</span>
+                            <h4>20/10/2020</h4>
+                        </div>
+                    </div>
+                    <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6">
+                        <div class="user-info">
+                            <span>TYPE</span>
+                            <h4>Personal</h4>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
     </div>
     <div class="col-xl-12">
-                                <div class="card">
-                                    <div class="card-header">
-                                        <h4 class="card-title">Notifications</h4>
-                                    </div>
-                                    <div class="card-body">
-                                        <form action="">
-                                            <div class="row col-6">
-                                                <div class="mb-3 mb-0">
-                                                    <label class="toggle">
-                                                        <input class="toggle-checkbox" type="checkbox" checked>
-                                                        <div class="toggle-switch"></div>
-                                                        <span class="toggle-label">I send or receive
-                                                            digital currency</span>
-                                                    </label>
-                                                    <label class="toggle">
-                                                        <input class="toggle-checkbox" type="checkbox">
-                                                        <div class="toggle-switch"></div>
-                                                        <span class="toggle-label">I receive merchant order</span>
-                                                    </label>
-                                                    <label class="toggle">
-                                                        <input class="toggle-checkbox" type="checkbox">
-                                                        <div class="toggle-switch"></div>
-                                                        <span class="toggle-label">There are recommendation for my
-                                                            sccount</span>
-                                                    </label>
-                                                </div>
-                                                <div class="col-12">
-                                                    <button class="btn btn-primary">Save</button>
-                                                </div>
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
-    </div>
+        <div class="card">
+            <div class="card-header">
+                <h4 class="card-title">Notifications</h4>
+            </div>
+            <div class="card-body">
+                <form action="">
+                    <div class="row col-6">
+                        <div class="mb-3 mb-0">
+                            <label class="toggle">
+                                <input class="toggle-checkbox" type="checkbox" checked>
+                                <div class="toggle-switch"></div>
+                                <span class="toggle-label">I send or receive
+                                    digital currency</span>
+                            </label>
+                            <label class="toggle">
+                                <input class="toggle-checkbox" type="checkbox">
+                                <div class="toggle-switch"></div>
+                                <span class="toggle-label">I receive merchant order</span>
+                            </label>
+                            <label class="toggle">
+                                <input class="toggle-checkbox" type="checkbox">
+                                <div class="toggle-switch"></div>
+                                <span class="toggle-label">There are recommendation for my
+                                    sccount</span>
+                            </label>
                         </div>
+                        <div class="col-12">
+                            <button class="btn btn-primary">Save</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
 <?= $this->endSection() ?>

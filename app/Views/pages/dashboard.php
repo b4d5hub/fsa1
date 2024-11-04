@@ -205,23 +205,35 @@ Dashboard
                                 <h4 class="card-title">Add New Transaction</h4>
                             </div>
                             <div class="card-body">
-                                <div class="create-new-category">
+                            <div class="create-new-category">
                                             <form class="row">
-                                                <div class="mb-3 col-5">
-                                                    <label class="form-label">Category </label>
+                                                <div class="mb-3 col-lg-2">
+                                                    <label class="form-label">Type </label>
                                                     <select class="form-select">
                                                         <option selected="">Choose...</option>
                                                         <option>Income</option>
                                                         <option>Expenses</option>
                                                     </select>
                                                 </div>
-                                                <div class="mb-3 col-5">
+                                                <div class="mb-3 col-lg-2">
+                                                    <label class="form-label">Category </label>
+                                                    <select class="form-select">
+                                                        <option selected="">Choose...</option>
+                                                        <option>Grocery</option>
+                                                        <option>Travel</option>
+                                                    </select>
+                                                </div>
+                                                <div class="mb-3 col-lg-4">
                                                     <label class="form-label">Description </label>
                                                     <input type="textarea" class="form-control" placeholder="Brief description">
                                                 </div>
-                                                <div class="col-2">
+                                                <div class="mb-3 col-lg-2">
+                                                    <label class="form-label">Amount </label>
+                                                    <input type="number" class="form-control" min=0>
+                                                </div>
+                                                <div class="col-lg-2">
                                                     <label class="form-label">Action </label>
-                                                    <button class="btn btn-danger w-100">Add Expense</button>
+                                                    <button class="btn btn-success w-100">Add</button>
                                                 </div>
                                             </form>
                                 </div>
