@@ -234,7 +234,7 @@
                                     var CurrentYear = new Date().getFullYear()
                                     document.write(CurrentYear)
                                 </script>
-                                <a href="#">Ekash</a> I All Rights Reserved
+                                <a href="#">TrackWise</a> I All Rights Reserved
                             </p>
                         </div>
                     </div>

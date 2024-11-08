@@ -7,7 +7,7 @@ Monthly Budget
 <?= $this->section('content') ?>
     <div class="content-body">
     <div class="container">
-    <div class="row">
+        <div class="row">
         <div class="budgets-tab-title">
             <h3>My Monthly Budget</h3>
         </div>
@@ -144,7 +144,7 @@ Monthly Budget
                                                 </div>
                                             </div>
         </div>
-    </div>
+        </div>
     </div>
     </div>
 <?= $this->endSection() ?>

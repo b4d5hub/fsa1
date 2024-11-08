@@ -4,28 +4,30 @@ namespace App\Database\Migrations;
 
 use CodeIgniter\Database\Migration;
 
-class CreateUsersTable extends Migration
+class CreateCategoriesTable extends Migration
 {
     public function up()
     {
         $this->forge->addField([
-            'user_id' => [
+            'id' => [
                 'type'           => 'INT',
+                'constraint'     => 11,
                 'unsigned'       => true,
                 'auto_increment' => true,
             ],
             'name' => [
                 'type'       => 'VARCHAR',
-                'constraint' => 255,
+                'constraint' => 100,
             ],
-            'email' => [
+            'color' => [
                 'type'       => 'VARCHAR',
-                'constraint' => 255,
-                'unique'     => true,
+                'constraint' => 7,
             ],
-            'password' => [
-                'type'       => 'VARCHAR',
-                'constraint' => 255,
+            'user_id' => [
+                'type'       => 'INT',
+                'constraint' => 11,
+                'unsigned'   => true,
+                'null'       => true,
             ],
             'created_at' => [
                 'type' => 'DATETIME',
@@ -36,12 +38,15 @@ class CreateUsersTable extends Migration
                 'null' => true,
             ],
         ]);
-        $this->forge->addKey('user_id', true); // Primary key
-        $this->forge->createTable('users');
+
+        $this->forge->addKey('id', true);
+        $this->forge->addForeignKey('user_id', 'users', 'id', 'CASCADE', 'CASCADE');
+
+        $this->forge->createTable('categories');
     }
 
     public function down()
     {
-        $this->forge->dropTable('users');
+        $this->forge->dropTable('categories');
     }
 }

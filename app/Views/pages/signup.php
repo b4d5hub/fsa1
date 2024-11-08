@@ -38,8 +38,7 @@
                                     <h3>Welcome to TrackWise</h3>
                                 </div>
                                 <div class="privacy-social">
-                                    <div class="privacy-link"><a href="#">Have an issue with 2-factor
-                                            authentication?</a><br /><a href="#">Privacy Policy</a></div>
+                                    <div class="privacy-link"><a href="/contact">Have an issue signing up?</a></div>
                                     <div class="intro-social">
                                         <ul>
                                             <li><a href="#"><i class="fi fi-brands-facebook"></i></a></li>
@@ -56,9 +55,13 @@
                                 <h4>Sign Up</h4>
                                 <form action="#">
                                     <div class="row">
-                                        <div class="col-12 mb-3">
-                                            <label class="form-label">Full Name</label>
-                                            <input name="fullName" type="text" class="form-control" />
+                                        <div class="col-6 mb-3">
+                                            <label class="form-label">First Name</label>
+                                            <input name="firstname" type="text" class="form-control" />
+                                        </div>
+                                        <div class="col-6 mb-3">
+                                            <label class="form-label">Last Name</label>
+                                            <input name="lastname" type="text" class="form-control" />
                                         </div>
                                         <div class="col-12 mb-3"><label class="form-label">Email</label>
                                             <input name="email" type="text" class="form-control" />
@@ -70,12 +73,7 @@
                                             <div class="form-check">
                                                 <input name="acceptTerms" type="checkbox" class="form-check-input"
                                                     id="acceptTerms" />
-                                                <label class="form-check-label" for="acceptTerms">I
-                                                    certify that I
-                                                    am 18 years of age or
-                                                    older, and agree to the <a href="#" class="text-primary">User
-                                                        Agreement</a> and <a href="#" class="text-primary">Privacy
-                                                        Policy</a>.</label>
+                                                <label class="form-check-label" for="acceptTerms">I certify that I am 18 years of age or older, and agree to the <a href="#" class="text-primary">User Agreement</a> and <a href="#" class="text-primary">Privacy Policy</a>.</label>
                                             </div>
                                         </div>
                                     </div>
