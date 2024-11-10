@@ -21,13 +21,13 @@ Settings
                     <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-6">
                         <div class="user-info">
                             <span>USER ID</span>
-                            <h4>818778</h4>
+                            <h4>2345</h4>
                         </div>
                     </div>
                     <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-6">
                         <div class="user-info">
-                            <span>EMAIL ADDRESS</span>
-                            <h4>email@example.com</h4>
+                        <span>EMAIL ADDRESS</span>
+                        <h4><?= isset($user['email']) ? esc($user['email']) : 'No email available' ?></h4>
                         </div>
                     </div>
                     <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-6">

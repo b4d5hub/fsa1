@@ -54,7 +54,12 @@
                         <div class="col-lg-6">
                             <div class="auth-form">
                                 <h4>Sign In</h4>
-                                <form action="/otp-phone">
+                                <?php if (session()->getFlashdata('error')): ?>
+                                    <div class="alert alert-danger">
+                                        <?= session()->getFlashdata('error'); ?>
+                                    </div>
+                                <?php endif; ?>
+                                <form form action="/auth/login" method="post">
                                     <div class="row">
                                         <div class="col-12 mb-3">
                                             <label class="form-label">Email</label>

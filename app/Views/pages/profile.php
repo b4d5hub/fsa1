@@ -34,10 +34,10 @@ Profile
                             <div class="card-body">
                                 <div class="profile-name">
                                     <div class="d-flex">
-                                        <img src="./images/avatar/1.jpg" alt="">
+                                       
                                         <div class="flex-grow-1">
-                                            <h4 class="mb-0">Henry John Paulin</h4>
-                                            <p>henry@gmail.com</p>
+                                        <h4 class="mb-0"><?= esc($user['name']) ?></h4>
+                                        <p><?= esc($user['email']) ?></p>
                                         </div>
                                     </div>
                                 </div>
@@ -48,7 +48,7 @@ Profile
                                     </div>
                                     <span class="reg_divider"></span>
                                     <div class="rank">
-                                        <h5>49,394 MAD</h5>
+                                        <h5><?= esc($user['budget']) ?> </h5>
                                         <p>Balance</p>
                                     </div>
                                 </div>
