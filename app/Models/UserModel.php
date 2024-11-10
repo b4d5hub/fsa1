@@ -10,4 +10,11 @@ class UserModel extends Model
     protected $primaryKey = 'id';
     protected $allowedFields = ['name', 'email', 'password'];
     protected $returnType = 'array';
+
+    // Dates
+    protected $useTimestamps = true;
+    protected $dateFormat    = 'datetime';
+    protected $createdField  = 'created_at';
+    protected $updatedField  = 'updated_at';
+    protected $deletedField  = 'deleted_at';
 }
