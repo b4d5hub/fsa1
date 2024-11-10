@@ -4,55 +4,49 @@ namespace App\Database\Migrations;
 
 use CodeIgniter\Database\Migration;
 
-class CreateUsersTable extends Migration
+class CreateUser extends Migration
 {
     public function up()
     {
         $this->forge->addField([
-            'id'          => [
+            'id' => [
                 'type'           => 'INT',
-                'constraint'     => 11,
                 'unsigned'       => true,
                 'auto_increment' => true,
             ],
-            'first_name'  => [
+            'name' => [
                 'type'       => 'VARCHAR',
-                'constraint' => 50,
+                'constraint' => '100',
             ],
-            'last_name'   => [
+            'email' => [
                 'type'       => 'VARCHAR',
-                'constraint' => 50,
+                'constraint' => '100',
             ],
-            'email'       => [
+            'password' => [
                 'type'       => 'VARCHAR',
-                'constraint' => 100,
-                'unique'     => true,
+                'constraint' => '255',
             ],
-            'password'    => [
-                'type'       => 'VARCHAR',
-                'constraint' => 255,
+            'budget' => [
+                'type'       => 'DECIMAL',
+                'constraint' => '10,2',
+                'default'    => 0.00,  // Valeur par défaut
+                'null'       => false, // Ne pas permettre les valeurs nulles
             ],
             'currency'    => [
                 'type'       => 'ENUM',
                 'constraint' => ['MAD', 'USD', 'EUR', 'AED', 'GBP'],
                 'default'    => 'MAD',
             ],
-            'budget'      => [
-                'type'       => 'DECIMAL',
-                'constraint' => '15,2',
-                'null'       => true,
-            ],
-            'created_at'  => [
+            'created_at' => [
                 'type' => 'DATETIME',
                 'null' => true,
             ],
-            'updated_at'  => [
+            'updated_at' => [
                 'type' => 'DATETIME',
                 'null' => true,
             ],
         ]);
-
-        $this->forge->addKey('id', true);
+        $this->forge->addKey('id', true); // Primary key
         $this->forge->createTable('users');
     }
 

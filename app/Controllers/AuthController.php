@@ -1,20 +1,24 @@
 <?php
+
 namespace App\Controllers;
 
 use App\Models\UserModel;
 use CodeIgniter\Controller;
 
-class AuthController extends Controller {
+class AuthController extends Controller
+{
 
     protected $session;
     protected $userModel;
 
-    public function __construct() {
+    public function __construct()
+    {
         $this->session = \Config\Services::session();
         $this->userModel = new UserModel();
     }
 
-    public function register() {
+    public function register()
+    {
         $validation = \Config\Services::validation();
 
         // Règles de validation
@@ -43,14 +47,14 @@ class AuthController extends Controller {
             $this->session->setFlashdata('error', 'Erreur lors de l\'inscription');
             return redirect()->to('/signup');
         }
-       
     }
 
-    public function login() {
+    public function login()
+    {
         // Récupérer les données envoyées depuis le formulaire
         $email = $this->request->getPost('email');
         $password = $this->request->getPost('password');
-        
+
         // Valider les données de connexion
         if (empty($email) || empty($password)) {
             $this->session->setFlashdata('error', 'Veuillez remplir tous les champs');
@@ -73,40 +77,40 @@ class AuthController extends Controller {
             return redirect()->to('/signin'); // Rediriger vers la page de connexion
         }
     }
-    public function profile() {
-    // Récupérer l'ID de l'utilisateur depuis la session
-    $userId = $this->session->get('user_id');
-    
-    // Vérifiez si l'utilisateur est connecté
-    if (!$userId) {
-        return redirect()->to('/signin');
+    public function profile()
+    {
+        // Récupérer l'ID de l'utilisateur depuis la session
+        $userId = $this->session->get('user_id');
+
+        // Vérifiez si l'utilisateur est connecté
+        if (!$userId) {
+            return redirect()->to('/signin');
+        }
+
+        // Récupérer les informations de l'utilisateur à partir de la base de données
+        $user = $this->userModel->find($userId);
+
+        // Passer les données à la vue
+        return view('pages/profile', [
+            'user' => $user
+        ]);
     }
+    public function settings()
+    {
+        // Récupérer l'ID de l'utilisateur depuis la session
+        $userId = $this->session->get('user_id');
 
-    // Récupérer les informations de l'utilisateur à partir de la base de données
-    $user = $this->userModel->find($userId);
+        // Vérifier si l'utilisateur est connecté
+        if (!$userId) {
+            return redirect()->to('/pages/signin');
+        }
 
-    // Passer les données à la vue
-    return view('pages/profile', [
-        'user' => $user
-    ]);
-}
-public function settings() {
-    // Récupérer l'ID de l'utilisateur depuis la session
-    $userId = $this->session->get('user_id');
-    
-    // Vérifier si l'utilisateur est connecté
-    if (!$userId) {
-        return redirect()->to('pages/signin');
+        // Récupérer les informations de l'utilisateur à partir de la base de données
+        $user = $this->userModel->find($userId);
+
+        // Passer les données de l'utilisateur à la vue
+        return view('pages/settings/index', [
+            'user' => $user
+        ]);
     }
-
-    // Récupérer les informations de l'utilisateur à partir de la base de données
-    $user = $this->userModel->find($userId);
-
-    // Passer les données de l'utilisateur à la vue
-    return view('pages/settings/index', [
-        'user' => $user
-    ]);
 }
-
-}
-
