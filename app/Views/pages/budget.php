@@ -7,7 +7,7 @@ Monthly Budget
 <?= $this->section('content') ?>
 <div class="content-body">
     <div class="container">
-        <?php if ($budget): ?>
+        <?php if (isset($curuser['budget']) && $curuser['budget']>0): ?>
             <div class="row">
                 <div class="budgets-tab-title">
                     <h3>My Monthly Budget</h3>
@@ -19,7 +19,7 @@ Monthly Budget
                                 <div>
                                     <span><i class="fi fi-rr-money-bill-wave-alt"></i></span>
                                     <h6>Total budget</h6>
-                                    <h3>$6,886.6</h3>
+                                    <h3><?=$curuser['currency']?><?=$curuser['budget']?></h3>
                                 </div>
                             </div>
                         </div>
@@ -31,11 +31,11 @@ Monthly Budget
                             <div class="d-flex justify-content-between">
                                 <div>
                                     <span>Spent</span>
-                                    <h3>$1458.30</h3>
+                                    <h3><?=$curuser['currency']?>1458.30</h3>
                                 </div>
                                 <div class="text-end">
                                     <span>Remaining</span>
-                                    <h3>$5428.30</h3>
+                                    <h3><?=$curuser['currency']?>5428.30</h3>
                                 </div>
                             </div>
                             <div class="progress">
@@ -56,25 +56,25 @@ Monthly Budget
                                 <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
                                     <div class="goals-widget">
                                         <p>Last Month</p>
-                                        <h3>$42,678</h3>
+                                        <h3><?=$curuser['currency']?>42,678</h3>
                                     </div>
                                 </div>
                                 <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
                                     <div class="goals-widget">
                                         <p>Expenses</p>
-                                        <h3>$1,798</h3>
+                                        <h3><?=$curuser['currency']?>1,798</h3>
                                     </div>
                                 </div>
                                 <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
                                     <div class="goals-widget">
                                         <p>Taxes</p>
-                                        <h3>$255.25</h3>
+                                        <h3><?=$curuser['currency']?>255.25</h3>
                                     </div>
                                 </div>
                                 <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
                                     <div class="goals-widget">
                                         <p>Debt</p>
-                                        <h3>$365,478</h3>
+                                        <h3><?=$curuser['currency']?>365,478</h3>
                                     </div>
                                 </div>
                             </div>
@@ -156,11 +156,11 @@ Monthly Budget
                                     <h4 class="card-title ">Set your monthly budget</h4>
                                 </div>
                                 <div class="card-body">
-                                    <form action="#">
+                                    <form action="/budget/set" method="post">
                                         <div class="row">
                                             <div class="mb-3 col-xl-12">
                                                 <label class="form-label">Amount </label>
-                                                <input type="number" min=0 require class="form-control" placeholder="35555">
+                                                <input type="number" name="budget" min=0 require class="form-control" placeholder="35555">
                                             </div>
                                             <div class="text-center col-12">
                                                 <button type="submit" class="btn btn-success w-100">Save</button>

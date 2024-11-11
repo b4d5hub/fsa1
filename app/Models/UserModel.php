@@ -8,7 +8,7 @@ class UserModel extends Model
 {
     protected $table = 'users';
     protected $primaryKey = 'id';
-    protected $allowedFields = ['name', 'email', 'password'];
+    protected $allowedFields = ['name', 'email', 'password', 'budget', 'currency'];
     protected $returnType = 'array';
 
     // Dates
@@ -17,4 +17,9 @@ class UserModel extends Model
     protected $createdField  = 'created_at';
     protected $updatedField  = 'updated_at';
     protected $deletedField  = 'deleted_at';
+
+    public function getUser($userId)
+    {
+        return $this->where('id', $userId)->first();
+    }
 }

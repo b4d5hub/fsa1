@@ -24,7 +24,7 @@ class AuthController extends Controller
         // Règles de validation
         $validation->setRules([
             'name' => 'required|min_length[3]|max_length[50]',
-            'email' => 'required|valid_email|is_unique[user.email]',
+            'email' => 'required|valid_email|is_unique[users.email]',
             'password' => 'required|min_length[8]'
         ]);
 

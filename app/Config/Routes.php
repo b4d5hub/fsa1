@@ -23,14 +23,18 @@ $routes->get('/dashboard', function(){return view('pages/dashboard');});
 
 //budget
 $routes->get('budget', 'BudgetController::index');
+$routes->post('/budget/set', 'BudgetController::setbudget');
+
 
 //categories
-$routes->get('/categories', function(){return view('pages/categories');});
-$routes->post('submit-category', 'CategoriesController::submit');
+$routes->get('/categories', 'CategoriesController::index');
+$routes->post('/categories/add', 'CategoriesController::submit');
+$routes->post('/categories/delete/(:num)', 'CategoriesController::deleteCategory/$1');
 
 //expenses
-$routes->get('/expenses', function(){return view('pages/expenses');});
-
+$routes->get('/expenses', 'TransactionsController::index');
+$routes->post('/transactions/add', 'TransactionsController::addTransaction');
+$routes->post('/transactions/delete/(:num)', 'TransactionsController::deleteTransaction/$1');
 
 //analytics
 $routes->get('/analytics', function(){return view('pages/analytics/index');});
