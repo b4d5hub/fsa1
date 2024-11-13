@@ -131,10 +131,11 @@
                                             <span><i class="fi fi-rr-settings"></i></span>
                                             Settings
                                         </a>
-                                        <a class="dropdown-item logout" href="/signin">
-                                            <span><i class="fi fi-bs-sign-out-alt"></i></span>
-                                            Logout
-                                        </a>
+                                        <form action="/auth/logout" method="post">
+                                            <button type="submit" class="dropdown-item logout">
+                                                <span><i class="fi fi-bs-sign-out-alt"></i></span> Logout
+                                            </button>
+                                        </form>
                                     </div>
                                 </div>
                             </div>

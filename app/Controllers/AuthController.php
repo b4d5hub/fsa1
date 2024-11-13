@@ -77,6 +77,14 @@ class AuthController extends Controller
             return redirect()->to('/signin'); // Rediriger vers la page de connexion
         }
     }
+
+    public function logout()
+    {
+        session()->destroy();
+
+        return redirect()->to('/');
+    }
+
     public function profile()
     {
         // Récupérer l'ID de l'utilisateur depuis la session
