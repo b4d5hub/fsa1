@@ -21,7 +21,7 @@ Settings
                     <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-6">
                         <div class="user-info">
                             <span>USER ID</span>
-                            <h4>2345</h4>
+                            <h4><?= esc($user["id"]) ?></h4>
                         </div>
                     </div>
                     <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-6">
@@ -33,7 +33,7 @@ Settings
                     <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-6">
                         <div class="user-info">
                             <span>CURRENCY</span>
-                            <h4>MAD</h4>
+                            <h4><?= esc($user["currency"]) ?></h4>
                         </div>
                     </div>
                     <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-6">

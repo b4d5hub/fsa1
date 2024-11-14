@@ -12,8 +12,9 @@ $routes->get('/', 'Home::index');
 $routes->get('/signin', function(){return view('pages/signin');});
 $routes->post('auth/login', 'AuthController::login');
 $routes->post('/auth/logout', 'AuthController::logout');
-
-
+$routes->post('auth/changeEmail_pw', 'AuthController::changeEmail_pw');
+$routes->post('auth/changeName', 'AuthController::changeName');
+$routes->post('auth/changeCurrency', 'AuthController::changeCurrency');
 $routes->get('/signup', function(){return view('pages/signup');});
 $routes->post('auth/register', 'AuthController::register');
 

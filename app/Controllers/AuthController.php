@@ -121,4 +121,108 @@ class AuthController extends Controller
             'user' => $user
         ]);
     }
+    public function changeEmail_pw()
+{
+    // Load validation library
+    $validation = \Config\Services::validation();
+
+    // Define validation rules
+    $validation->setRules([
+        'email' => 'required|valid_email',
+        'password' => 'required|min_length[8]'
+    ]);
+
+    // Check if validation fails
+    if (!$validation->withRequest($this->request)->run()) {
+        return redirect()->back()->withInput()->with('errors', $validation->getErrors());
+    }
+    // Retrieve the form data
+    $email = $this->request->getPost('email');
+    $password = $this->request->getPost('password');
+
+    // Hash the password before saving it
+    $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
+
+    // Get the logged-in user ID from the session
+    $userId = session()->get('user_id');  // Adjust according to your session configuration
+
+    // Check if the new email already exists in the database
+    $db = \Config\Database::connect();
+    $builder = $db->table('users');
+    $builder->where('email', $email);
+    $existingUser = $builder->get()->getRow();
+
+    if ($existingUser) {
+        // If the email already exists, redirect back with an error message
+        return redirect()->back()->withInput()->with('errors', ['email' => 'This email is already registered.']);
+    }
+    // Update email and password in the database
+    $builder->where('id', $userId);
+    $builder->update(['email' => $email, 'password' => $hashedPassword]);
+
+    // Redirect to the settings page with a success message
+    return redirect()->to('/settings-profile')->with('success', 'Email and password updated successfully.');
+}
+// Inside Auth controller
+public function changeName()
+{
+    // Load validation library
+    $validation = \Config\Services::validation();
+
+    // Define validation rules
+    $validation->setRules([
+        'name' => 'required|min_length[3]|max_length[255]'
+    ]);
+
+    // Check if validation fails
+    if (!$validation->withRequest($this->request)->run()) {
+        return redirect()->back()->withInput()->with('errors', $validation->getErrors());
+    }
+
+    // Retrieve the new name from the form
+    $name = $this->request->getPost('name');
+
+    // Get the logged-in user ID from the session
+    $userId = session()->get('user_id');  // Adjust according to your session configuration
+
+    // Update the user's name in the database
+    $db = \Config\Database::connect();
+    $builder = $db->table('users');
+    $builder->where('id', $userId);
+    $builder->update(['name' => $name]);
+
+    // Redirect to the settings page with a success message
+    return redirect()->to('/settings-profile')->with('success', 'Full Name updated successfully.');
+}
+// Inside Auth controller
+public function changeCurrency()
+{
+    // Load validation library
+    $validation = \Config\Services::validation();
+
+    // Define validation rule for currency
+    $validation->setRules([
+        'currency' => 'required|in_list[MAD,USD,EUR,AED,GBP]'
+    ]);
+
+    // Check if validation fails
+    if (!$validation->withRequest($this->request)->run()) {
+        return redirect()->back()->withInput()->with('errors', $validation->getErrors());
+    }
+
+    // Retrieve the selected currency from the form
+    $currency = $this->request->getPost('currency');
+
+    // Get the logged-in user ID from the session
+    $userId = session()->get('user_id');  // Adjust according to your session configuration
+
+    // Update the user's currency in the database
+    $db = \Config\Database::connect();
+    $builder = $db->table('users');
+    $builder->where('id', $userId);
+    $builder->update(['currency' => $currency]);
+    // Redirect to the settings page with a success message
+    return redirect()->to('/settings-profile')->with('success', 'Primary currency updated successfully.');
+}
+
 }
