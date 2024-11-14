@@ -18,10 +18,16 @@ Settings
             </div>
             <div class="card-body">
                 <form class="row">
-                    <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-6">
+                    <div class="col-xxl-1 col-xl-1 col-lg-3 col-md-2">
                         <div class="user-info">
                             <span>USER ID</span>
                             <h4><?= esc($user["id"]) ?></h4>
+                        </div>
+                    </div>
+                    <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-6">
+                        <div class="user-info">
+                            <span>NAME</span>
+                            <h4><?= esc($user["name"]) ?></h4>
                         </div>
                     </div>
                     <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-6">
@@ -30,16 +36,16 @@ Settings
                         <h4><?= isset($user['email']) ? esc($user['email']) : 'No email available' ?></h4>
                         </div>
                     </div>
-                    <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-6">
+                    <div class="col-xxl-2 col-xl-2 col-lg-3 col-md-6">
                         <div class="user-info">
                             <span>CURRENCY</span>
                             <h4><?= esc($user["currency"]) ?></h4>
                         </div>
                     </div>
-                    <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-6">
+                    <div class="col-xxl-2 col-xl-2 col-lg-3 col-md-6">
                         <div class="user-info">
                             <span>JOINED SINCE</span>
-                            <h4>20/10/2020</h4>
+                            <h4><?= date('Y-m-d', strtotime($user["created_at"])) ?></h4>
                         </div>
                     </div>
                 </form>

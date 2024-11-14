@@ -59,6 +59,21 @@ class TransactionsController extends BaseController
         return redirect()->back()->with('message', 'Transaction added successfully!');
     }
 
+    public function updateTransaction($id)
+    {
+        $data = [
+            'type' => $this->request->getPost('type'),
+            'description' => $this->request->getPost('description'),
+            'amount' => $this->request->getPost('amount'),
+        ];
+
+        if ($this->transactionModel->update($id, $data)) {
+            return redirect()->to('/expenses')->with('message', 'Transaction updated successfully!');
+        }
+
+        return redirect()->back()->with('error', 'Failed to update transaction.');
+    }
+
     public function deleteTransaction($transactionId)
     {
         $userId = $this->session->get('user_id');
