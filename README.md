@@ -1,68 +1,105 @@
-# CodeIgniter 4 Application Starter
 
-## What is CodeIgniter?
+# Expense Management Application
 
-CodeIgniter is a PHP full-stack web framework that is light, fast, flexible and secure.
-More information can be found at the [official site](https://codeigniter.com).
+An efficient and user-friendly expense management system built using CodeIgniter. The application helps users manage their finances by tracking income and expenses, setting budgets, and viewing insightful analytics. 
 
-This repository holds a composer-installable app starter.
-It has been built from the
-[development repository](https://github.com/codeigniter4/CodeIgniter4).
 
-More information about the plans for version 4 can be found in [CodeIgniter 4](https://forum.codeigniter.com/forumdisplay.php?fid=28) on the forums.
 
-You can read the [user guide](https://codeigniter.com/user_guide/)
-corresponding to the latest version of the framework.
+## Features
 
-## Installation & updates
+- **User Authentication**: Secure signup and login functionality.
+- **Dashboard**: Overview of income, expenses, and key financial analytics.
+- **Manage Budgets**: Set and track your monthly budget for better financial planning.
+- **Expense Categories**: Organize expenses into various categories for clearer insights.
+- **Track Expenses**: Add, view, and manage your expenses easily.
+- **Analytics**: Visual representation of income and expenses trends.
+- **Profile Management**: Edit and update user profile information.
 
-`composer create-project codeigniter4/appstarter` then `composer update` whenever
-there is a new release of the framework.
 
-When updating, check the release notes to see if there are any changes you might need to apply
-to your `app` folder. The affected files can be copied or merged from
-`vendor/codeigniter4/framework/app`.
 
-## Setup
+## Installation
 
-Copy `env` to `.env` and tailor for your app, specifically the baseURL
-and any database settings.
+Follow these steps to set up the project on your local environment:
 
-## Important Change with index.php
+1. **Clone the Repository**:
+   ```bash
+   git clone https://github.com/b4d5hub/fsa1.git
+   ```
+2. **Navigate to Project Directory**:
+   ```bash
+   cd fsa1
+   ```
+3. **Set Up Database**:
+   - Create a database and import the provided `.sql` file.
+4. **Configure Environment**:
+   - Copy `env` to `.env` and update the database credentials:
+     ```plaintext
+     database.default.hostname = localhost
+     database.default.database = your_database_name
+     database.default.username = your_username
+     database.default.password = your_password
+     ```
+5. **Install Dependencies**:
+   - Run `composer install` to install the necessary packages.
+6. **Run the Project**:
+   - Use XAMPP or another server setup to host the application.
 
-`index.php` is no longer in the root of the project! It has been moved inside the *public* folder,
-for better security and separation of components.
 
-This means that you should configure your web server to "point" to your project's *public* folder, and
-not to the project root. A better practice would be to configure a virtual host to point there. A poor practice would be to point your web server to the project root and expect to enter *public/...*, as the rest of your logic and the
-framework are exposed.
 
-**Please** read the user guide for a better explanation of how CI4 works!
+## Usage
 
-## Repository Management
+1. **Sign Up / Log In**: 
+   - Register a new account or log in using existing credentials.
+2. **Dashboard**: 
+   - View a comprehensive summary of income and expenses.
+3. **Manage Budget**: 
+   - Set a monthly budget and keep track of spending.
+4. **Add Expenses**: 
+   - Record expenses and assign them to categories.
+5. **Analytics**: 
+   - Analyze spending patterns and income trends with charts.
+6. **Profile**:
+   - Edit and update user details as needed.
 
-We use GitHub issues, in our main repository, to track **BUGS** and to track approved **DEVELOPMENT** work packages.
-We use our [forum](http://forum.codeigniter.com) to provide SUPPORT and to discuss
-FEATURE REQUESTS.
 
-This repository is a "distribution" one, built by our release preparation script.
-Problems with it can be raised on our forum, or as issues in the main repository.
 
-## Server Requirements
+## Technologies Used
 
-PHP version 8.1 or higher is required, with the following extensions installed:
+- **Framework**: CodeIgniter
+- **Languages**: PHP, HTML, CSS, JavaScript
+- **Database**: MySQL
+- **Additional Libraries**: Toastr for notifications, Chart.js for analytics charts
 
-- [intl](http://php.net/manual/en/intl.requirements.php)
-- [mbstring](http://php.net/manual/en/mbstring.installation.php)
 
-> [!WARNING]
-> - The end of life date for PHP 7.4 was November 28, 2022.
-> - The end of life date for PHP 8.0 was November 26, 2023.
-> - If you are still using PHP 7.4 or 8.0, you should upgrade immediately.
-> - The end of life date for PHP 8.1 will be December 31, 2025.
 
-Additionally, make sure that the following extensions are enabled in your PHP:
+## Screenshots
 
-- json (enabled by default - don't turn it off)
-- [mysqlnd](http://php.net/manual/en/mysqlnd.install.php) if you plan to use MySQL
-- [libcurl](http://php.net/manual/en/curl.requirements.php) if you plan to use the HTTP\CURLRequest library
+_Add screenshots of your project interface to give users a preview._
+
+
+
+## Contributing
+
+Contributions are welcome! To contribute:
+
+1. Fork the project.
+2. Create your feature branch: `git checkout -b feature/YourFeature`.
+3. Commit your changes: `git commit -m 'Add some feature'`.
+4. Push to the branch: `git push origin feature/YourFeature`.
+5. Open a pull request.
+
+
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
+
+
+
+## Contact
+
+For any inquiries or issues, please reach out:
+
+- **Email**: badreddine@ouajih.com
+- **GitHub**: [b4d5hub](https://github.com/b4d5hub)
+
