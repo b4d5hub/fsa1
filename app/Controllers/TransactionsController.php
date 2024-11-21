@@ -89,4 +89,55 @@ class TransactionsController extends BaseController
             return redirect()->back()->with('error', 'Transaction not found or unauthorized access!');
         }
     }
+
+    public function historique()
+    {
+        $transactionModel = new Transaction();
+        
+        // Récupérer toutes les transactions avec leurs catégories
+        $data['transactions'] = $transactionModel
+            ->select('transactions.*, categories.name as category_name')
+            ->join('categories', 'transactions.category_id = categories.id', 'left')
+            ->findAll();
+            
+
+        return view('pages/analytics/transaction-history', $data);
+    }
+
+    public function statistics()
+{
+    $db = db_connect();
+
+    // Lifetime Expense
+    $lifetimeExpense = $db->table('transactions')
+        ->selectSum('amount', 'total')
+        ->where('type', 'Expenses')
+        ->get()
+        ->getRow();
+
+    // Monthly Avg Income
+    $monthlyAvgIncome = $db->table('transactions')
+        ->selectSum('amount','total')
+        ->where('type', 'Income')
+        ->get()
+        ->getRow();
+
+    // Total Transactions
+    $totalTransactions = $db->table('transactions')
+        ->countAllResults();
+
+    // Total Categories
+    $totalCategories = $db->table('categories')
+        ->countAllResults();
+
+    // Envoyer les données à la vue
+    $data = [
+        'lifetimeExpense' => $lifetimeExpense->total ?? 0,
+        'monthlyAvgIncome' => $monthlyAvgIncome->total ?? 0,
+        'totalTransactions' => $totalTransactions,
+        'totalCategories' => $totalCategories,
+    ];
+
+    return view('pages/analytics/index', $data);
+}
 }

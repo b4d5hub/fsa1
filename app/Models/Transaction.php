@@ -39,4 +39,20 @@ class Transaction extends Model
             ->where('transactions.user_id', $userId)
             ->findAll();
     }
+    public function getIncomeTransactions($userId)
+    {
+        return $this->select('transactions.*, categories.name as category_name, categories.color as category_color')
+            ->join('categories', 'transactions.category_id = categories.id')
+            ->where('transactions.user_id', $userId)
+            ->where('transactions.type', 'Income') // Filter for income transactions
+            ->findAll();
+    }
+    public function getExponsesTransactions($userId)
+    {
+        return $this->select('transactions.*, categories.name as category_name, categories.color as category_color')
+            ->join('categories', 'transactions.category_id = categories.id')
+            ->where('transactions.user_id', $userId)
+            ->where('transactions.type', 'Expenses') // Filter for income transactions
+            ->findAll();
+    }
 }

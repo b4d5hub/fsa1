@@ -44,11 +44,16 @@ $routes->post('/transactions/delete/(:num)', 'TransactionsController::deleteTran
 $routes->post('transactions/update/(:num)', 'TransactionsController::updateTransaction/$1');
 
 //analytics
-$routes->get('/analytics', function(){return view('pages/analytics/index');}, ['filter' => 'auth']);
-$routes->get('/analytics-expenses', function(){return view('pages/analytics/expenses');}, ['filter' => 'auth']);
-$routes->get('/analytics-income', function(){return view('pages/analytics/income');}, ['filter' => 'auth']);
-$routes->get('/analytics-transaction-history', function(){return view('pages/analytics/transaction-history');}, ['filter' => 'auth']);
-
+$routes->get('/analytics', 'TransactionsController::statistics', ['filter' => 'auth']);
+//$routes->get('/analytics', function(){return view('pages/analytics/index');}, ['filter' => 'auth']);
+//$routes->get('/analytics-expenses', function(){return view('pages/analytics/expenses');}, ['filter' => 'auth']);
+//$routes->get('/analytics-income', function(): string{return view('pages/analytics/income');}, ['filter' => 'auth']);
+$routes->get('/analytics-transaction-history', 'TransactionsController::historique', ['filter' => 'auth']);
+$routes->get('/income-expense-data', 'ChartController::getIncomeVsExpenseData');
+$routes->get('/analytics-income',   'AnalyticsController::income', ['filter' => 'auth']);
+$routes->get('/dataincome', 'ChartController::getIncomeData', ['filter' => 'auth']);
+$routes->get('/analytics-expenses',   'AnalyticsController::expenses', ['filter' => 'auth']);
+$routes->get('/dataexponses', 'ChartController::getExpensesData', ['filter' => 'auth']);//pour chart expenses
 //profile
 $routes->get('/profile', 'AuthController::profile', ['filter' => 'auth']);
 

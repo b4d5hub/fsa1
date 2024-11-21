@@ -16,8 +16,8 @@ Analytics
                                         <i class="fi fi-rr-mobile"></i></span>
                                     </div>
                                     <div class="widget-content">
-                                        <p>Lifetime Expense</p>
-                                        <h3>$5470.36</h3>
+                                        <p>Total Expense</p>
+                                        <h3>$<?= number_format($lifetimeExpense, 2) ?></h3>
                                     </div>
                                 </div>
                             </div>
@@ -27,8 +27,8 @@ Analytics
                                                 class="fi fi-rr-replace"></i></span>
                                     </div>
                                     <div class="widget-content">
-                                        <p>Monthly Avg Income</p>
-                                        <h3>$12470.36</h3>
+                                        <p>Total Income</p>
+                                        <h3>$<?= number_format($monthlyAvgIncome, 2) ?></h3>
                                     </div>
                                 </div>
                             </div>
@@ -39,7 +39,7 @@ Analytics
                                     </div>
                                     <div class="widget-content">
                                         <p>Total Transactions</p>
-                                        <h3>354</h3>
+                                        <h3><?= $totalTransactions ?></h3>
                                     </div>
                                 </div>
                             </div>
@@ -50,17 +50,17 @@ Analytics
                                     </div>
                                     <div class="widget-content">
                                         <p>Categories</p>
-                                        <h3>40</h3>
+                                        <h3><?= $totalCategories ?></h3>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-xl-12">
                                 <div class="card">
                                     <div class="card-header">
-                                        <h4 class="card-title">Weekly Expenses </h4>
+                                        <h4 class="card-title">Transactions Overview </h4>
                                     </div>
                                     <div class="card-body">
-                                        <canvas id="chartjsWeeklyExpenses"></canvas>
+                                    <canvas id="chartjsIncomeVsExpense"></canvas>
                                     </div>
                                 </div>
                             </div>
