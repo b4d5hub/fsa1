@@ -7,11 +7,12 @@ Monthly Budget
 <?= $this->section('content') ?>
 <div class="content-body">
     <div class="container">
-        <?php if (isset($curuser['budget']) && $curuser['budget']>0): ?>
+        <?php if (isset($curuser['budget']) && $curuser['budget'] > 0): ?>
             <div class="row">
                 <div class="budgets-tab-title">
                     <h3>My Monthly Budget</h3>
                 </div>
+
                 <div class="col-lg-3">
                     <div class="card">
                         <div class="card-body">
@@ -19,7 +20,7 @@ Monthly Budget
                                 <div>
                                     <span><i class="fi fi-rr-money-bill-wave-alt"></i></span>
                                     <h6>Total budget</h6>
-                                    <h3><?=$curuser['currency']?><?=$curuser['budget']?></h3>
+                                    <h3><?= esc($curuser['currency']) ?><?= esc(number_format($curuser['budget'], 2)) ?></h3>
                                 </div>
                             </div>
                         </div>
@@ -31,117 +32,58 @@ Monthly Budget
                             <div class="d-flex justify-content-between">
                                 <div>
                                     <span>Spent</span>
-                                    <h3><?=$curuser['currency']?>1458.30</h3>
+                                    <h3><?= esc($curuser['currency']) ?><?= number_format($spent, 2) ?></h3>
                                 </div>
                                 <div class="text-end">
                                     <span>Remaining</span>
-                                    <h3><?=$curuser['currency']?>5428.30</h3>
+                                    <h3><?= esc($curuser['currency']) ?><?= number_format($remaining, 2) ?></h3>
                                 </div>
                             </div>
                             <div class="progress">
-                                <div class="progress-bar" style="width: 25%;"
+                                <div class="progress-bar" style="width: <?= esc($percentageSpent) ?>%;"
                                     role="progressbar">
                                 </div>
                             </div>
                             <div class="d-flex justify-content-between mt-2">
-                                <span>25%</span>
+                                <span><?= esc($percentageSpent) ?>%</span>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-xxl-12">
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
-                                    <div class="goals-widget">
-                                        <p>Last Month</p>
-                                        <h3><?=$curuser['currency']?>42,678</h3>
-                                    </div>
-                                </div>
-                                <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
-                                    <div class="goals-widget">
-                                        <p>Expenses</p>
-                                        <h3><?=$curuser['currency']?>1,798</h3>
-                                    </div>
-                                </div>
-                                <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
-                                    <div class="goals-widget">
-                                        <p>Taxes</p>
-                                        <h3><?=$curuser['currency']?>255.25</h3>
-                                    </div>
-                                </div>
-                                <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
-                                    <div class="goals-widget">
-                                        <p>Debt</p>
-                                        <h3><?=$curuser['currency']?>365,478</h3>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+
+
                 <div class="col-xl-12">
                     <div class="card">
                         <div class="card-header">
                             <h4 class="card-title">Top 3 Expenses</h4>
                         </div>
                         <div class="card-body available-wallet">
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="d-flex flex-grow-2 goals-wallet-progress">
-                                    <div class="goals-icon">
-                                        <span class="bg-yellow-500"><i
-                                                class="fi fi-rr-bank"></i></span>
-                                    </div>
-                                    <div class="goals-info flex-grow-2 me-3">
-                                        <div class="d-flex justify-content-between mb-1">
-                                            <h5 class="mb-1">City Bank</h5>
-                                            <p class="mb-0">150$</p>
-                                        </div>
-                                        <div class="progress">
-                                            <div class="progress-bar" role="progressbar"
-                                                style="width: 75%;">
+                            <?php if (!empty($topExpenseCategories)): ?>
+                                <?php foreach ($topExpenseCategories as $category): ?>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="d-flex flex-grow-2 goals-wallet-progress">
+                                            <div class="goals-icon">
+                                                <span style="background-color: <?= esc($category['color']); ?>;">
+                                                    <i class="fi fi-rr-folder"></i>
+                                                </span>
+                                            </div>
+                                            <div class="goals-info flex-grow-2 me-3">
+                                                <div class="d-flex justify-content-between mb-1">
+                                                    <h5 class="mb-1"><?= esc($category['name']); ?></h5>
+                                                    <p class="mb-0"><?= number_format($category['total_amount'], 2); ?> $</p>
+                                                </div>
+                                                <div class="progress">
+                                                    <div class="progress-bar" role="progressbar"
+                                                        style="width: <?= min(($category['total_amount'] / 1000) * 100, 100); ?>%;">
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                            </div>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="d-flex flex-grow-2 goals-wallet-progress">
-                                    <div class="goals-icon">
-                                        <span class="bg-indigo-500"><i
-                                                class="fi fi-rr-money-bills-simple"></i></span>
-                                    </div>
-                                    <div class="goals-info flex-grow-2 me-3">
-                                        <div class="d-flex justify-content-between mb-1">
-                                            <h5 class="mb-1">Cash Wallet</h5>
-                                            <p class="mb-0">150$</p>
-                                        </div>
-                                        <div class="progress">
-                                            <div class="progress-bar bg-success"
-                                                role="progressbar" style="width: 25%;"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="d-flex flex-grow-2 goals-wallet-progress">
-                                    <div class="goals-icon">
-                                        <span class="bg-purple-500"><i
-                                                class="fi fi-rr-credit-card"></i></span>
-                                    </div>
-                                    <div class="goals-info flex-grow-2 me-3">
-                                        <div class="d-flex justify-content-between mb-1">
-                                            <h5 class="mb-1">Visa Card</h5>
-                                            <p class="mb-0">150$</p>
-                                        </div>
-                                        <div class="progress">
-                                            <div class="progress-bar bg-info" role="progressbar"
-                                                style="width: 50%;"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                                <?php endforeach; ?>
+                            <?php else: ?>
+                                <p class="text-muted">No expense categories found.</p>
+                            <?php endif; ?>
                         </div>
                     </div>
                 </div>

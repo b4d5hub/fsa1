@@ -16,12 +16,12 @@ Income
                 <h4 class="card-title">Income Breakdown</h4>
             </div>
             <div class="card-body">
-            <canvas id="chartjsDonut"></canvas>
-        <div class="list-1 mt-3">
-            <ul id="incomeList">
-                <!-- The list will be dynamically updated -->
-            </ul>
-        </div>
+                <canvas id="chartjsDonut"></canvas>
+                <div class="list-1 mt-3">
+                    <ul id="incomeList">
+                        <!-- The list will be dynamically updated -->
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
@@ -33,7 +33,7 @@ Income
             <div class="card-body">
                 <div class="transaction-table">
                     <div class="table-responsive">
-                        <table class="table mb-0 table-responsive-sm">
+                        <table class="table mb-0 table-responsive-sm text-center">
                             <thead>
                                 <tr>
                                     <th>Category</th>
@@ -63,8 +63,6 @@ Income
                                         </td>
                                         <td>
                                             <?= esc($transaction['currency']) ?>
-                                        </td>
-                                        <td>
                                         </td>
                                     </tr>
                                 <?php endforeach; ?>

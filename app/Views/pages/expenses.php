@@ -81,6 +81,7 @@ Expenses
                                 <table class="table mb-0 table-responsive-sm category-type">
                                     <thead>
                                         <tr>
+                                            <th>Type</th>
                                             <th>Category</th>
                                             <th>Date</th>
                                             <th>Description</th>
@@ -96,6 +97,12 @@ Expenses
                                                     <span class="table-category-icon">
                                                         <i style="background: <?= esc($transaction['category_color']) ?>;"></i>
                                                         <?= esc($transaction['category_name']) ?>
+                                                    </span>
+                                                </td>
+                                                <td>
+                                                    <span class="table-category-icon">
+                                                        <i style="background: <?= esc($transaction['type']) ?>;"></i>
+                                                        <?= esc($transaction['type']) ?>
                                                     </span>
                                                 </td>
                                                 <td>

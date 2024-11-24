@@ -17,7 +17,7 @@ Analytics
                                     </div>
                                     <div class="widget-content">
                                         <p>Total Expense</p>
-                                        <h3>$<?= number_format($lifetimeExpense, 2) ?></h3>
+                                        <h3><?= $currency . number_format($lifetimeExpense, 2) ?></h3>
                                     </div>
                                 </div>
                             </div>
@@ -28,7 +28,7 @@ Analytics
                                     </div>
                                     <div class="widget-content">
                                         <p>Total Income</p>
-                                        <h3>$<?= number_format($monthlyAvgIncome, 2) ?></h3>
+                                        <h3><?= $currency  .  number_format($lifetimeIncome, 2) ?></h3>
                                     </div>
                                 </div>
                             </div>

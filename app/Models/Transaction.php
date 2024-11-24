@@ -55,4 +55,15 @@ class Transaction extends Model
             ->where('transactions.type', 'Expenses') // Filter for income transactions
             ->findAll();
     }
+    public function getTopExpensesCategories($userId)
+    {
+        return $this->select('categories.name, categories.color, SUM(transactions.amount) as total_amount')
+            ->join('categories', 'transactions.category_id = categories.id')
+            ->where('transactions.user_id', $userId)
+            ->where('transactions.type', 'Expenses')
+            ->groupBy('categories.id')
+            ->orderBy('total_amount', 'DESC')
+            ->limit(3)
+            ->findAll();
+    }
 }
