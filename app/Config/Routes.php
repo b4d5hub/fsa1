@@ -40,6 +40,7 @@ $routes->post('/categories/delete/(:num)', 'CategoriesController::deleteCategory
 //expenses
 $routes->get('/expenses', 'TransactionsController::index', ['filter' => 'auth']);
 $routes->post('/transactions/add', 'TransactionsController::addTransaction', ['filter' => 'auth']);
+$routes->post('/transactions/export', 'TransactionsController::export', ['filter' => 'auth']);
 $routes->post('/transactions/delete/(:num)', 'TransactionsController::deleteTransaction/$1', ['filter' => 'auth']);
 $routes->post('transactions/update/(:num)', 'TransactionsController::updateTransaction/$1');
 

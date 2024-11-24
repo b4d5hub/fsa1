@@ -9,8 +9,11 @@ Monthly Budget
     <div class="container">
         <?php if (isset($curuser['budget']) && $curuser['budget'] > 0): ?>
             <div class="row">
-                <div class="budgets-tab-title">
+                <div class="budgets-tab-title d-flex justify-content-between align-items-center pb-2" style="float:right; width: 100%;">
                     <h3>My Monthly Budget</h3>
+                    <!-- <form action="/" method="post">
+                        <button type="submit" class="btn btn-primary">Edit Budget</button>
+                    </form> -->
                 </div>
 
                 <div class="col-lg-3">
