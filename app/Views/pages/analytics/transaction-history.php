@@ -14,6 +14,9 @@ Transaction History
         <div class="card">
             <div class="card-header">
                 <h4 class="card-title">Transaction History</h4>
+                <form action="<?= base_url('/transactions/export') ?>" method="post">
+                    <button type="submit" class="btn btn-danger">Export Transactions</button>
+                </form>
             </div>
             <div class="card-body">
                 <div class="transaction-table">
