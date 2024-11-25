@@ -122,6 +122,8 @@ class Transaction extends Model
         return $totalIncome - $totalExpenses;
     }
 
+
+
     public function getTransactionsByUser($userId)
     {
         return $this->where('user_id', $userId)->findAll();

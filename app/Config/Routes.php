@@ -32,6 +32,8 @@ $routes->get('/reset', function () {
 
 //dashboard
 $routes->get('/dashboard', 'DashboardController::index', ['filter' => 'auth']);
+$routes->get('/balance-trends', 'DashboardController::getBalanceTrends');
+
 
 //budget
 $routes->get('budget', 'BudgetController::index', ['filter' => 'auth']);
@@ -49,6 +51,7 @@ $routes->post('/transactions/add', 'TransactionsController::addTransaction', ['f
 $routes->post('/transactions/export', 'TransactionsController::export', ['filter' => 'auth']);
 $routes->post('/transactions/delete/(:num)', 'TransactionsController::deleteTransaction/$1', ['filter' => 'auth']);
 $routes->post('transactions/update/(:num)', 'TransactionsController::updateTransaction/$1');
+
 
 //analytics
 $routes->get('/analytics', 'TransactionsController::statistics', ['filter' => 'auth']);

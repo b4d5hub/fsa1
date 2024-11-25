@@ -108,15 +108,15 @@ Dashboard
                     </div> -->
         </div>
         <div class="row">
-            <div class="col-xxl-8 col-xl-8 col-lg-8">
+            <div class="col-xxl-12 col-xl-12 col-lg-12">
                 <div class="card">
                     <div class="card-header balance-trend">
-                        <h4 class="card-title">Balance Trends <br> <span>$221,478</span></h4>
+                        <h4 class="card-title">Balance Trends <br> <span><?= esc($user['currency']) . " " . esc(number_format($totalbalance, 2)) ?></span></h4>
                         <div class="trend-stats">
                             <p class="mb-0">Last Month</p>
                             <span class="text-success">
                                 <i class="fi fi-rr-arrow-trend-up"></i>
-                                12.25%
+                                <?= esc(number_format(abs($balancePercentage), 2)) ?>%
                             </span>
                         </div>
                     </div>
@@ -125,7 +125,7 @@ Dashboard
                     </div>
                 </div>
             </div>
-            <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-12">
+            <!-- <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-12">
                 <div class="card">
                     <div class="card-header">
                         <h4 class="card-title">Monthly Budgets</h4>
@@ -205,7 +205,7 @@ Dashboard
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
             <div class="col-xl-12">
                 <div class="card">
                     <div class="card-header">

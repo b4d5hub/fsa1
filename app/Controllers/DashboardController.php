@@ -57,4 +57,38 @@ class DashboardController extends BaseController
             ]
         );
     }
+
+    public function getBalanceTrends()
+    {
+        $userId = $this->session->get('user_id');
+
+        // Example: Fetch balance trends for the past 7 days
+        $transactions = $this->transactionModel->select("DATE(created_at) as date, SUM(CASE WHEN type = 'Income' THEN amount ELSE 0 END) as income, SUM(CASE WHEN type = 'Expenses' THEN amount ELSE 0 END) as expenses")
+            ->where('user_id', $userId)
+            ->groupBy("DATE(created_at)")
+            ->orderBy("DATE(created_at)", "ASC")
+            ->limit(7)
+            ->get()
+            ->getResultArray();
+
+        // Transform the data for the chart
+        $labels = [];
+        $incomes = [];
+        $expenses = [];
+
+        foreach ($transactions as $transaction) {
+            $labels[] = date('d M', strtotime($transaction['date']));
+            $incomes[] = $transaction['income'];
+            $expenses[] = $transaction['expenses'];
+        }
+
+        return $this->response->setJSON([
+            'labels' => $labels,
+            'datasets' => [
+                'income' => $incomes,
+                'expenses' => $expenses,
+            ]
+        ]);
+    }
+    
 }
