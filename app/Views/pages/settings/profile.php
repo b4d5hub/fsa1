@@ -5,7 +5,7 @@ Profile
 <?= $this->endSection() ?>
 
 <?= $this->section('h3title') ?>
-Profile
+Settings - Profile
 <?= $this->endSection() ?>
 
 <?= $this->section('settings-content') ?>

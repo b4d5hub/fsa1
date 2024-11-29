@@ -1,3 +1,4 @@
+<?= $this->extend('layouts/main') ?>
 <?= $this->extend('layouts/analytics') ?>
 
 <?= $this->section('title') ?>
@@ -25,7 +26,7 @@ Expenses
             </div>
         </div>
     </div>
-    <div class="col-xl-8 col-lg-8">
+    <div class="col-xl-8">
         <div class="card">
             <div class="card-header">
                 <h4 class="card-title">Transaction History</h4>
@@ -59,7 +60,7 @@ Expenses
                                             <?= esc($transaction['description']) ?>
                                         </td>
                                         <td>
-                                            <?= esc($transaction['amount']) ?>
+                                            <?= esc(number_format($transaction['amount'])) ?>
                                         </td>
                                         <td>
                                             <?= esc($transaction['currency']) ?>

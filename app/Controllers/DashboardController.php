@@ -26,6 +26,9 @@ class DashboardController extends BaseController
         $userId = $this->session->get('user_id');
         $user = $this->userModel->getUser($userId);
 
+        $transactions = $this->transactionModel->getTransactionsWithCategory($userId);
+
+
         $userexpenses = $this->transactionModel->getTotalExpenses($userId);
         $userincome = $this->transactionModel->getTotalIncome($userId);
 
@@ -46,6 +49,7 @@ class DashboardController extends BaseController
             [
                 'userexpenses' => $userexpenses,
                 'user' => $user,
+                'transactions' => $transactions,
                 'totalbalance' => $totalbalance,
                 'userincome' => $userincome,
                 'lastMonthExpenses' => $lastMonthExpenses,
@@ -90,5 +94,4 @@ class DashboardController extends BaseController
             ]
         ]);
     }
-    
 }

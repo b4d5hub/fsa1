@@ -9,15 +9,11 @@ use CodeIgniter\Router\RouteCollection;
 $routes->get('/', 'Home::index');
 
 //authentification
-$routes->get('/signup', function () {
-    return view('pages/signup');
-});
+$routes->get('/signup', 'AuthController::signup');
 $routes->post('auth/register', 'AuthController::register');
 $routes->post('auth/delete', 'AuthController::delete');
 
-$routes->get('/signin', function () {
-    return view('pages/signin');
-});
+$routes->get('/signin', 'AuthController::signin');
 $routes->post('auth/login', 'AuthController::login');
 $routes->post('/auth/logout', 'AuthController::logout');
 
@@ -40,6 +36,7 @@ $routes->get('budget', 'BudgetController::index', ['filter' => 'auth']);
 $routes->post('/budget/set', 'BudgetController::setbudget', ['filter' => 'auth']);
 
 
+
 //categories
 $routes->get('/categories', 'CategoriesController::index', ['filter' => 'auth']);
 $routes->post('/categories/add', 'CategoriesController::submit', ['filter' => 'auth']);
@@ -55,15 +52,13 @@ $routes->post('transactions/update/(:num)', 'TransactionsController::updateTrans
 
 //analytics
 $routes->get('/analytics', 'TransactionsController::statistics', ['filter' => 'auth']);
-//$routes->get('/analytics', function(){return view('pages/analytics/index');}, ['filter' => 'auth']);
-//$routes->get('/analytics-expenses', function(){return view('pages/analytics/expenses');}, ['filter' => 'auth']);
-//$routes->get('/analytics-income', function(): string{return view('pages/analytics/income');}, ['filter' => 'auth']);
+$routes->get('/analytics-income',   'AnalyticsController::income', ['filter' => 'auth']);
+$routes->get('/analytics-expenses',   'AnalyticsController::expenses', ['filter' => 'auth']);
 $routes->get('/analytics-transaction-history', 'TransactionsController::historique', ['filter' => 'auth']);
 $routes->get('/income-expense-data', 'ChartController::getIncomeVsExpenseData');
-$routes->get('/analytics-income',   'AnalyticsController::income', ['filter' => 'auth']);
 $routes->get('/dataincome', 'ChartController::getIncomeData', ['filter' => 'auth']);
-$routes->get('/analytics-expenses',   'AnalyticsController::expenses', ['filter' => 'auth']);
 $routes->get('/dataexponses', 'ChartController::getExpensesData', ['filter' => 'auth']); //pour chart expenses
+
 //profile
 $routes->get('/profile', 'AuthController::profile', ['filter' => 'auth']);
 

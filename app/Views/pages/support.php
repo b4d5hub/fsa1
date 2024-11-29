@@ -5,29 +5,8 @@ Support
 <?= $this->endSection() ?>
 
 
+
 <?= $this->section('content') ?>
-<div class="content-body">
-    <div class="container">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="page-title">
-                            <div class="row align-items-center justify-content-between">
-                                <div class="col-xl-4">
-                                    <div class="page-title-content">
-                                        <h3>Support</h3>
-                                        <p class="mb-2">Welcome TrackWise Finance Management</p>
-                                    </div>
-                                </div>
-                                <div class="col-auto">
-                                    <div class="breadcrumbs"><a href="#">Home </a>
-                                        <span><i class="fi fi-rr-angle-small-right"></i></span>
-                                        <a href="#">Support</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
                 <div class="row">
                     <div class="col-xl-12">
                         <div class="card">

@@ -46,7 +46,7 @@
                                     <span class="dark"><i class="fi fi-rr-eclipse-alt"></i></span>
                                     <span class="light"><i class="fi fi-rr-eclipse-alt"></i></span>
                                 </div>
-                                <div class="nav-item dropdown notification">
+                                <!-- <div class="nav-item dropdown notification">
                                     <div data-bs-toggle="dropdown">
                                         <div class="notify-bell icon-menu">
                                             <span><i class="fi fi-rs-bells"></i></span>
@@ -101,7 +101,7 @@
                                             <a href="/notifications">More<i class="fi fi-bs-angle-right"></i></a>
                                         </div>
                                     </div>
-                                </div>
+                                </div> -->
                                 <div class="dropdown profile_log dropdown">
                                     <div data-bs-toggle="dropdown">
                                         <div class="user icon-menu active"><span><i class="fi fi-rr-user"></i></span>
@@ -109,16 +109,16 @@
                                     </div>
                                     <div tabindex="-1" role="menu" aria-hidden="true"
                                         class="dropdown-menu dropdown-menu dropdown-menu-end">
-                                        <div class="user-email">
+                                        <!-- <div class="user-email">
                                             <div class="user">
                                                 <span class="thumb"><img class="rounded-full"
                                                         src="./images/avatar/3.jpg" alt=""></span>
                                                 <div class="user-info">
-                                                    <h5>Hafsa Humaira</h5>
+                                                    <h5></h5>
                                                     <span>hello@email.com</span>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </div> -->
                                         <a class="dropdown-item" href="/profile">
                                             <span><i class="fi fi-rr-user"></i></span>
                                             Profile
@@ -224,53 +224,76 @@
                 </ul>
             </div>
         </div>
-        <?= $this->renderSection('content') ?>
-        <div class="footer">
+
+        <div class="content-body">
             <div class="container">
                 <div class="row">
-                    <div class="col-xl-6">
-                        <div class="copyright">
-                            <p>© Copyright
-                                <script>
-                                    var CurrentYear = new Date().getFullYear()
-                                    document.write(CurrentYear)
-                                </script>
-                                <a href="#">TrackWise</a> I All Rights Reserved
-                            </p>
+                    <div class="col-12">
+                        <div class="page-title">
+                            <div class="row align-items-center justify-content-between">
+                                <div class="col-xl-4">
+                                    <div class="page-title-content">
+                                        <h3><?= $this->renderSection('h3title') ?></h3>
+                                        <p class="mb-2"><?= $this->renderSection('h3desc') ?></p>
+                                    </div>
+                                </div>
+                                <div class="col-auto">
+                                    <!-- <div class="breadcrumbs"><a href="#">Home </a>
+                                        <span><i class="fi fi-rr-angle-small-right"></i></span>
+                                        <a href="#">Dashboard</a>
+                                    </div> -->
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-xl-6">
-                        <div class="footer-social">
-                            <ul>
-                                <li><a href="#"><i class="fi fi-brands-facebook"></i></a></li>
-                                <li><a href="#"><i class="fi fi-brands-twitter"></i></a></li>
-                                <li><a href="#"><i class="fi fi-brands-linkedin"></i></a></li>
-                                <li><a href="#"><i class="fi fi-brands-youtube"></i></a></li>
-                            </ul>
+                </div>
+                <?= $this->renderSection('content') ?>
+                <div class="footer">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-xl-6">
+                                <div class="copyright">
+                                    <p>© Copyright
+                                        <script>
+                                            var CurrentYear = new Date().getFullYear()
+                                            document.write(CurrentYear)
+                                        </script>
+                                        <a href="#">TrackWise</a> I All Rights Reserved
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-xl-6">
+                                <div class="footer-social">
+                                    <ul>
+                                        <li><a href="#"><i class="fi fi-brands-facebook"></i></a></li>
+                                        <li><a href="#"><i class="fi fi-brands-twitter"></i></a></li>
+                                        <li><a href="#"><i class="fi fi-brands-linkedin"></i></a></li>
+                                        <li><a href="#"><i class="fi fi-brands-youtube"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-    <script src="./vendor/jquery/jquery.min.js"></script>
-    <script src="./vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="./vendor/toastr/toastr.min.js"></script>
-    <!-- <script src="./vendor/toastr/toastr-init.js"></script> -->
-    <script src="./vendor/circle-progress/circle-progress.min.js"></script>
-    <script src="./vendor/circle-progress/circle-progress-init.js"></script>
-    <script src="./vendor/chartjs/chartjs.js"></script>
-    <script src="./js/plugins/chartjs-bar-income-vs-expense.js"></script>
-    <script src="./js/plugins/chartjs-bar-weekly-expense.js"></script>
-    <script src="./js/plugins/chartjs-profile-wallet.js"></script>
-    <script src="./js/plugins/chartjs-profile-wallet2.js"></script>
-    <script src="./js/plugins/chartjs-profile-wallet3.js"></script>
-    <script src="./js/plugins/chartjs-profile-wallet4.js"></script>
-    <script src="./vendor/perfect-scrollbar/perfect-scrollbar.min.js"></script>
-    <script src="./js/plugins/perfect-scrollbar-init.js"></script>
-    <script src="./vendor/circle-progress/circle-progress.min.js"></script>
-    <script src="./js/plugins/circle-progress-init.js"></script>
-    <script src="./js/scripts.js"></script>
+            <script src="<?= base_url('vendor/jquery/jquery.min.js'); ?>"></script>
+            <script src="<?= base_url('vendor/bootstrap/js/bootstrap.bundle.min.js'); ?>"></script>
+            <script src="<?= base_url('vendor/toastr/toastr.min.js'); ?>"></script>
+            <!-- <script src="./vendor/toastr/toastr-init.js'); ?>"></script> -->
+            <script src="<?= base_url('vendor/circle-progress/circle-progress.min.js'); ?>"></script>
+            <script src="<?= base_url('vendor/circle-progress/circle-progress-init.js'); ?>"></script>
+            <script src="<?= base_url('vendor/chartjs/chartjs.js'); ?>"></script>
+            <script src="<?= base_url('js/plugins/chartjs-bar-income-vs-expense.js'); ?>"></script>
+            <script src="<?= base_url('js/plugins/chartjs-bar-weekly-expense.js'); ?>"></script>
+            <script src="<?= base_url('js/plugins/chartjs-profile-wallet.js'); ?>"></script>
+            <script src="<?= base_url('js/plugins/chartjs-profile-wallet2.js'); ?>"></script>
+            <script src="<?= base_url('js/plugins/chartjs-profile-wallet3.js'); ?>"></script>
+            <script src="<?= base_url('js/plugins/chartjs-profile-wallet4.js'); ?>"></script>
+            <script src="<?= base_url('vendor/perfect-scrollbar/perfect-scrollbar.min.js'); ?>"></script>
+            <script src="<?= base_url('js/plugins/perfect-scrollbar-init.js'); ?>"></script>
+            <script src="<?= base_url('vendor/circle-progress/circle-progress.min.js'); ?>"></script>
+            <script src="<?= base_url('js/plugins/circle-progress-init.js'); ?>"></script>
+            <script src="<?= base_url('js/scripts.js'); ?>"></script>
 </body>
 
 </html>

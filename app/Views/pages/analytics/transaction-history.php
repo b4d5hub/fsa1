@@ -24,31 +24,35 @@ Transaction History
                         <table class="table mb-0 table-responsive-sm">
                             <thead>
                                 <tr>
+                                    <th>Type</th>
                                     <th>Category</th>
-                                    <th>Date</th>
                                     <th>Description</th>
                                     <th>Amount</th>
                                     <th>Currency</th>
+                                    <th>Date</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <?php if (!empty($transactions)): ?>
                                     <?php foreach ($transactions as $transaction): ?>
                                         <tr>
-                                            <td>
-                                                <?= esc($transaction['category_name']); ?>
+                                            <td class="text-<?= esc($transaction['type']) === 'Income' ? 'success' : 'danger'; ?>">
+                                                <?= esc($transaction['type']); ?>
                                             </td>
                                             <td>
-                                                <?= date('d.m.Y', strtotime($transaction['created_at'])); ?>
+                                                <?= esc($transaction['category_name']); ?>
                                             </td>
                                             <td>
                                                 <?= esc($transaction['description']); ?>
                                             </td>
                                             <td>
-                                                <?= esc($transaction['amount']); ?>
+                                                <?= esc(number_format($transaction['amount'], 2)); ?>
                                             </td>
                                             <td>
                                                 <?= esc($transaction['currency']); ?>
+                                            </td>
+                                            <td>
+                                                <?= date('d.m.Y', strtotime($transaction['created_at'])); ?>
                                             </td>
                                         </tr>
                                     <?php endforeach; ?>

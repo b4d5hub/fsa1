@@ -5,7 +5,11 @@ Settings
 <?= $this->endSection() ?>
 
 <?= $this->section('h3title') ?>
-Settings
+Settings - Account
+<?= $this->endSection() ?>
+
+<?= $this->section('h3desc') ?>
+<!-- /// -->
 <?= $this->endSection() ?>
 
 <?= $this->section('settings-content') ?>

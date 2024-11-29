@@ -33,7 +33,7 @@ Income
             <div class="card-body">
                 <div class="transaction-table">
                     <div class="table-responsive">
-                        <table class="table mb-0 table-responsive-sm text-center">
+                        <table class="table mb-0 table-responsive-sm">
                             <thead>
                                 <tr>
                                     <th>Category</th>
@@ -59,7 +59,7 @@ Income
                                             <?= esc($transaction['description']) ?>
                                         </td>
                                         <td>
-                                            <?= esc($transaction['amount']) ?>
+                                            <?= esc(number_format($transaction['amount'])) ?>
                                         </td>
                                         <td>
                                             <?= esc($transaction['currency']) ?>

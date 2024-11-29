@@ -63,6 +63,7 @@ class TransactionsController extends BaseController
     public function updateTransaction($id)
     {
         $data = [
+            'category_id' => $this->request->getPost('category_id'),
             'type' => $this->request->getPost('type'),
             'description' => $this->request->getPost('description'),
             'amount' => $this->request->getPost('amount'),

@@ -65,8 +65,12 @@
                                         <span class="dark"><i class="fi fi-rr-eclipse-alt"></i></span>
                                         <span class="light"><i class="fi fi-rr-eclipse-alt"></i></span>
                                     </div>
-                                    <li class="nav-item"><a href="./signin" class="btn btn-primary" style="margin-right: 5px;">Login</a></li>
-                                    <li class="nav-item"><a href="./signup" class="btn btn-primary">Register</a></li>     
+                                    <?php if ($userId): ?>
+                                        <a href="./dashboard" class="btn btn-primary" style="margin-right: 5px;">Dashboard</a>
+                                    <?php else: ?>
+                                        <a href="./signin" class="btn btn-primary" style="margin-right: 5px;">Login</a>
+                                        <a href="./signup" class="btn btn-primary">Register</a>
+                                    <?php endif; ?>
                                 </div>
                             </nav>
                         </div>
@@ -219,39 +223,45 @@
         <div class="mb-5" id="faq">
             <div class="container">
                 <div>
-                <div class="row row-gap-32">
-                    <div class="col-12 col-xl-6">
-                        <div class="bg-img"> <img src="https://avitex.vn/html/finatex/assets/images/component/item1.png" alt=""></div>
-                    </div>
-                    <div class="col-12 col-xl-6 bg-surface position-relative">
-                        <div class="content-main">
-                            <h3>Frequently Asked questions</h3>
-                            <div class="list-question mt-32 position-absolute">
-                                <div class="question-item shadow-sm cursor-pointer mt-4 px-4 rounded border border-light">
-                                    <div class="question-item-main d-flex justify-content-between pt-2 pb-2 mb-0"><h4>Which device can I use to enter your service?</h4><i class="fi-rr-plus"></i></div>
-                                    <div class="content-question">
-                                        <div class="border-line"></div>
-                                        <div class="pt-3 pb-3">You can access our service from any device with an internet connection.</div>
+                    <div class="row row-gap-32">
+                        <div class="col-12 col-xl-6">
+                            <div class="bg-img"> <img src="https://avitex.vn/html/finatex/assets/images/component/item1.png" alt=""></div>
+                        </div>
+                        <div class="col-12 col-xl-6 bg-surface position-relative">
+                            <div class="content-main">
+                                <h3>Frequently Asked questions</h3>
+                                <div class="list-question mt-32 position-static">
+                                    <div class="question-item shadow-sm cursor-pointer mt-4 px-4 rounded border border-light">
+                                        <div class="question-item-main d-flex justify-content-between pt-2 pb-2 mb-0">
+                                            <h4>Which device can I use to enter your service?</h4><i class="fi-rr-plus"></i>
+                                        </div>
+                                        <div class="content-question">
+                                            <div class="border-line"></div>
+                                            <div class="pt-3 pb-3">You can access our service from any device with an internet connection.</div>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="question-item shadow-sm cursor-pointer mt-4 px-4 rounded border border-light">
-                                    <div class="question-item-main d-flex justify-content-between pt-2 pb-2 mb-0"><h4>What are your products and services?</h4><i class="fi-rr-plus"></i></div>
-                                    <div class="content-question">
-                                        <div class="border-line"></div>
-                                        <div class="pt-3 pb-3">Our products and services include Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
+                                    <div class="question-item shadow-sm cursor-pointer mt-4 px-4 rounded border border-light">
+                                        <div class="question-item-main d-flex justify-content-between pt-2 pb-2 mb-0">
+                                            <h4>What are your products and services?</h4><i class="fi-rr-plus"></i>
+                                        </div>
+                                        <div class="content-question">
+                                            <div class="border-line"></div>
+                                            <div class="pt-3 pb-3">Our products and services include Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="question-item shadow-sm cursor-pointer mt-4 px-4 rounded border border-light open">
-                                    <div class="question-item-main d-flex justify-content-between pt-2 pb-2 mb-0"><h4>Lorem ipsum dolor sit amet consectetur, adipisicing elit?</h4><i class="fi-rr-plus"></i></div>
-                                    <div class="content-question">
-                                        <div class="border-line"></div>
-                                        <div class="pt-3 pb-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum incidunt maxime ducimus repellendus dolor! Quo cupiditate tenetur enim distinctio nam, eveniet quisquam itaque non corrupti, similique fuga explicabo maxime quis.</div>
+                                    <div class="question-item shadow-sm cursor-pointer mt-4 px-4 rounded border border-light open">
+                                        <div class="question-item-main d-flex justify-content-between pt-2 pb-2 mb-0">
+                                            <h4>Lorem ipsum dolor sit amet consectetur, adipisicing elit?</h4><i class="fi-rr-plus"></i>
+                                        </div>
+                                        <div class="content-question">
+                                            <div class="border-line"></div>
+                                            <div class="pt-3 pb-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum incidunt maxime ducimus repellendus dolor! Quo cupiditate tenetur enim distinctio nam, eveniet quisquam itaque non corrupti, similique fuga explicabo maxime quis.</div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
                 </div>
             </div>
         </div>

@@ -5,6 +5,8 @@ namespace App\Controllers;
 use App\Models\UserModel;
 use CodeIgniter\Controller;
 
+use function PHPUnit\Framework\isEmpty;
+
 class AuthController extends Controller
 {
 
@@ -15,6 +17,26 @@ class AuthController extends Controller
     {
         $this->session = \Config\Services::session();
         $this->userModel = new UserModel();
+    }
+
+    public function signin()
+    {
+        $userId = $this->session->get('user_id');
+
+        if ($userId) {
+            return redirect()->back();
+        }
+        return view('pages/signin');
+    }
+
+    public function signup()
+    {
+        $userId = $this->session->get('user_id');
+
+        if ($userId) {
+            return redirect()->back();
+        }
+        return view('pages/signup');
     }
 
     public function register()
