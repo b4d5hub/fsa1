@@ -48,16 +48,48 @@ class TransactionsController extends BaseController
         $amount = $this->request->getPost('amount');
         $currency = $this->userModel->getUser($userId)['currency'];
 
-        $this->transactionModel->save([
-            'type' => $type,
-            'category_id' => $categoryId,
-            'description' => $description,
-            'amount' => $amount,
-            'currency' => $currency,
-            'user_id' => $userId
-        ]);
+        if ($type && $categoryId && $description && $amount && $currency) {
+            $this->transactionModel->save([
+                'type' => $type,
+                'category_id' => $categoryId,
+                'description' => $description,
+                'amount' => $amount,
+                'currency' => $currency,
+                'user_id' => $userId
+            ]);
+        } else {
+            return redirect()->to('/expenses')->with('error', 'All fields must be filled');
+        }
 
-        return redirect()->back()->with('message', 'Transaction added successfully!');
+        // $currentMonthIncome = $this->transactionModel->getCurrentMonthIncome($userId);
+        $currentMonthExpenses = $this->transactionModel->getCurrentMonthExpenses($userId);
+        // $currentMonthBalance = $currentMonthIncome - $currentMonthExpenses;
+
+        $budget = $this->userModel->getUser($userId)['budget'];
+
+        if ($currentMonthExpenses > $budget) {
+            // Get user's email
+            $userEmail = $this->userModel->getUser($userId)['email'];
+
+            // Send warning email
+            $email = \Config\Services::email();
+            $email->setFrom('trackwisecom@gmail.com', 'TrackWise');
+            $email->setTo($userEmail);
+            $email->setReplyTo('trackwisecom@gmail.com', 'TrackWise');
+            $email->setSubject('Budget Exceeded Warning');
+            $email->setMessage(
+                "Dear User,\n\nYour total expenses of $currency " . number_format($currentMonthExpenses, 2) .
+                    " has exceeded your monthly budget of $currency " . number_format($budget, 2) .
+                    ".\n\nPlease review your transactions.\n\nBest regards,\nTrackWise Team"
+            );
+            if (!$email->send()) {
+                return redirect()->to('/expenses')->with('error', 'Transaction added successfully! SMTP error occured, notify the WebMaster as soon as possible!');
+            }
+        }
+
+
+
+        return redirect()->to('/expenses')->with('message', 'Transaction added successfully!');
     }
 
     public function updateTransaction($id)

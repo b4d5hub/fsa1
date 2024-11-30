@@ -11,6 +11,15 @@ Expenses
 
 <?= $this->section('content') ?>
 <div class="row">
+    <?php if (!empty($_SESSION['message'])) {
+        echo '<div class="alert alert-success">' . htmlspecialchars($_SESSION['message']) . '</div>';
+        unset($_SESSION['message']); // Clear the message after displaying it
+    }
+    if (!empty($_SESSION['error'])) {
+        echo '<div class="alert alert-danger">' . htmlspecialchars($_SESSION['error']) . '</div>';
+        unset($_SESSION['message']); // Clear the message after displaying it
+    }
+    ?>
     <div class="col-xl-12">
         <div class="card">
             <div class="card-header">

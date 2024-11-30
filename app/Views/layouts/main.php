@@ -11,6 +11,8 @@
     <!-- Custom Stylesheet -->
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./vendor/toastr/toastr.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+
 </head>
 
 <body class="dashboard">
@@ -32,6 +34,7 @@
                             <div class="header-left">
                                 <div class="brand-logo"><a class="mini-logo" href="/"><img
                                             src="./images/logoi.png" alt="" width="40"></a></div>
+                                <!-- Not functioning yet -->
                                 <div class="search">
                                     <form action="#">
                                         <div class="input-group">
@@ -46,62 +49,6 @@
                                     <span class="dark"><i class="fi fi-rr-eclipse-alt"></i></span>
                                     <span class="light"><i class="fi fi-rr-eclipse-alt"></i></span>
                                 </div>
-                                <!-- <div class="nav-item dropdown notification">
-                                    <div data-bs-toggle="dropdown">
-                                        <div class="notify-bell icon-menu">
-                                            <span><i class="fi fi-rs-bells"></i></span>
-                                        </div>
-                                    </div>
-                                    <div tabindex="-1" role="menu" aria-hidden="true"
-                                        class="dropdown-menu dropdown-menu-end">
-                                        <h4>Recent Notification</h4>
-                                        <div class="lists">
-                                            <a class="" href="/#">
-                                                <div class="d-flex align-items-center">
-                                                    <span class="me-3 icon success"><i
-                                                            class="fi fi-bs-check"></i></span>
-                                                    <div>
-                                                        <p>Account created successfully</p>
-                                                        <span>2024-11-04 12:00:23</span>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                            <a class="" href="/#">
-                                                <div class="d-flex align-items-center">
-                                                    <span class="me-3 icon fail"><i
-                                                            class="fi fi-sr-cross-small"></i></span>
-                                                    <div>
-                                                        <p>2FA verification failed</p>
-                                                        <span>2024-11-04 12:00:23</span>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                            <a class="" href="/#">
-                                                <div class="d-flex align-items-center">
-                                                    <span class="me-3 icon success"><i
-                                                            class="fi fi-bs-check"></i></span>
-                                                    <div>
-                                                        <p>Device confirmation completed</p>
-                                                        <span>2024-11-04 12:00:23</span>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                            <a class="" href="/#">
-                                                <div class="d-flex align-items-center">
-                                                    <span class="me-3 icon pending"><i
-                                                            class="fi fi-rr-triangle-warning"></i></span>
-                                                    <div>
-                                                        <p>Phone verification pending</p>
-                                                        <span>2024-11-04 12:00:23</span>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </div>
-                                        <div class="more">
-                                            <a href="/notifications">More<i class="fi fi-bs-angle-right"></i></a>
-                                        </div>
-                                    </div>
-                                </div> -->
                                 <div class="dropdown profile_log dropdown">
                                     <div data-bs-toggle="dropdown">
                                         <div class="user icon-menu active"><span><i class="fi fi-rr-user"></i></span>
@@ -109,16 +56,6 @@
                                     </div>
                                     <div tabindex="-1" role="menu" aria-hidden="true"
                                         class="dropdown-menu dropdown-menu dropdown-menu-end">
-                                        <!-- <div class="user-email">
-                                            <div class="user">
-                                                <span class="thumb"><img class="rounded-full"
-                                                        src="./images/avatar/3.jpg" alt=""></span>
-                                                <div class="user-info">
-                                                    <h5></h5>
-                                                    <span>hello@email.com</span>
-                                                </div>
-                                            </div>
-                                        </div> -->
                                         <a class="dropdown-item" href="/profile">
                                             <span><i class="fi fi-rr-user"></i></span>
                                             Profile
@@ -197,22 +134,6 @@
                             <span class="nav-text">Profile</span>
                         </a>
                     </li>
-                    <!-- <li>
-                        <a href="support">
-                            <span>
-                                <i class="fi fi-rr-user-headset"></i>
-                            </span>
-                            <span class="nav-text">Support</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="affiliates">
-                            <span>
-                                <i class="fi fi-rs-link-alt"></i>
-                            </span>
-                            <span class="nav-text">Affiliates</span>
-                        </a>
-                    </li> -->
                     <li>
                         <a href="settings">
                             <span>
@@ -276,6 +197,9 @@
                     </div>
                 </div>
             </div>
+            <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+            <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
             <script src="<?= base_url('vendor/jquery/jquery.min.js'); ?>"></script>
             <script src="<?= base_url('vendor/bootstrap/js/bootstrap.bundle.min.js'); ?>"></script>
             <script src="<?= base_url('vendor/toastr/toastr.min.js'); ?>"></script>
