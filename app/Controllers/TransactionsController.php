@@ -94,52 +94,56 @@ class TransactionsController extends BaseController
 
     public function historique()
     {
+        $userId = session()->get('user_id');
         $transactionModel = new Transaction();
 
-        // Récupérer toutes les transactions avec leurs catégories
+        // Récupérer les transactions de l'utilisateur connecté avec leurs catégories
         $data['transactions'] = $transactionModel
             ->select('transactions.*, categories.name as category_name')
             ->join('categories', 'transactions.category_id = categories.id', 'left')
+            ->where('transactions.user_id', $userId)
             ->findAll();
-
 
         return view('pages/analytics/transaction-history', $data);
     }
 
+
     public function statistics()
     {
+        $userId = session()->get('user_id');
 
-        $userId = $this->session->get('user_id');
         $currency = $this->userModel->getUser($userId)['currency'];
-
         $db = db_connect();
 
-        // Lifetime Expense
-        $lifetimeExpense = $db->table('transactions')
+
+        $TotaleExpense = $db->table('transactions')
             ->selectSum('amount', 'total')
             ->where('type', 'Expenses')
+            ->where('user_id', $userId) // Filtrer par utilisateur
             ->get()
             ->getRow();
 
-        // Monthly Avg Income
-        $lifetimeIncome = $db->table('transactions')
+
+        $TotaleIncome = $db->table('transactions')
             ->selectSum('amount', 'total')
             ->where('type', 'Income')
+            ->where('user_id', $userId)
             ->get()
             ->getRow();
 
-        // Total Transactions
         $totalTransactions = $db->table('transactions')
+            ->where('user_id', $userId)
             ->countAllResults();
 
-        // Total Categories
+
         $totalCategories = $db->table('categories')
+            ->where('user_id', $userId)
             ->countAllResults();
 
-        // Envoyer les données à la vue
+        // Préparer les données pour la vue
         $data = [
-            'lifetimeExpense' => $lifetimeExpense->total ?? 0,
-            'lifetimeIncome' => $lifetimeIncome->total ?? 0,
+            'lifetimeExpense' => $TotaleExpense->total ?? 0,
+            'lifetimeIncome' => $TotaleIncome->total ?? 0,
             'totalTransactions' => $totalTransactions,
             'totalCategories' => $totalCategories,
             'currency' => $currency,
@@ -147,6 +151,7 @@ class TransactionsController extends BaseController
 
         return view('pages/analytics/index', $data);
     }
+
 
     public function export()
     {

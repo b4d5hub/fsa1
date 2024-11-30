@@ -1,4 +1,3 @@
-// Fetch data from the API endpoint
 fetch('http://localhost:8080/dataincome')
     .then(response => response.json())
     .then(data => {

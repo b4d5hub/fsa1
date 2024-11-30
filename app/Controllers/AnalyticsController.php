@@ -25,7 +25,6 @@ class AnalyticsController extends BaseController
     {
         $userId = $this->session->get('user_id');
 
-        // Fetch categories associated with the user
         $categories = $this->categoryModel->getCategoriesByUser($userId);
         $transactions = $this->transactionModel->getIncomeTransactions($userId);
 
@@ -35,11 +34,11 @@ class AnalyticsController extends BaseController
     {
         $userId = $this->session->get('user_id');
 
-        // Fetch categories associated with the user
         $categories = $this->categoryModel->getCategoriesByUser($userId);
         $transactions = $this->transactionModel->getExponsesTransactions($userId);
 
         return view('/pages/analytics/expenses', ['categories' => $categories, 'transactions' => $transactions]);
     }
+
 
 }
