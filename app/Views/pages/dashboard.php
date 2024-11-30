@@ -56,54 +56,13 @@ Welcome TrackWise Finance Management
     <div class="col-xl-12">
         <div class="card">
             <div class="card-header">
-                <h4 class="card-title">Add New Transaction</h4>
-            </div>
-            <div class="card-body">
-                <div class="create-new-category">
-                    <form class="row">
-                        <div class="mb-3 col-lg-2">
-                            <label class="form-label">Type </label>
-                            <select class="form-select">
-                                <option selected="">Choose...</option>
-                                <option>Income</option>
-                                <option>Expenses</option>
-                            </select>
-                        </div>
-                        <div class="mb-3 col-lg-2">
-                            <label class="form-label">Category </label>
-                            <select class="form-select">
-                                <option selected="">Choose...</option>
-                                <option>Grocery</option>
-                                <option>Travel</option>
-                            </select>
-                        </div>
-                        <div class="mb-3 col-lg-4">
-                            <label class="form-label">Description </label>
-                            <input type="textarea" class="form-control" placeholder="Brief description">
-                        </div>
-                        <div class="mb-3 col-lg-2">
-                            <label class="form-label">Amount </label>
-                            <input type="number" class="form-control" min=0>
-                        </div>
-                        <div class="col-lg-2">
-                            <label class="form-label">Action </label>
-                            <button class="btn btn-success w-100">Add</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="col-xl-12">
-        <div class="card">
-            <div class="card-header">
-                <h4 class="card-title">Transaction History</h4>
+                <h4 class="card-title">Latest Transaction</h4>
                 <a href="/analytics-transaction-history">More<i class="fi fi-bs-angle-right"></i></a>
             </div>
             <div class="card-body">
                 <div class="transaction-table">
                     <div class="table-responsive">
-                        <table class="table mb-0 table-responsive-sm">
+                        <table class="table mb-0 table-responsive-sm table-striped table-hover">
                             <thead>
                                 <tr>
                                     <th>Type</th>

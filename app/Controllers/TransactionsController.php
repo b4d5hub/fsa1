@@ -58,7 +58,7 @@ class TransactionsController extends BaseController
                 'user_id' => $userId
             ]);
         } else {
-            return redirect()->to('/expenses')->with('error', 'All fields must be filled');
+            return redirect()->to('/transactions')->with('error', 'All fields must be filled');
         }
 
         // $currentMonthIncome = $this->transactionModel->getCurrentMonthIncome($userId);
@@ -83,13 +83,13 @@ class TransactionsController extends BaseController
                     ".\n\nPlease review your transactions.\n\nBest regards,\nTrackWise Team"
             );
             if (!$email->send()) {
-                return redirect()->to('/expenses')->with('error', 'Transaction added successfully! SMTP error occured, notify the WebMaster as soon as possible!');
+                return redirect()->to('/transactions')->with('error', 'Transaction added successfully! SMTP error occured, notify the WebMaster as soon as possible!');
             }
         }
 
 
 
-        return redirect()->to('/expenses')->with('message', 'Transaction added successfully!');
+        return redirect()->to('/transactions')->with('message', 'Transaction added successfully!');
     }
 
     public function updateTransaction($id)
@@ -102,7 +102,7 @@ class TransactionsController extends BaseController
         ];
 
         if ($this->transactionModel->update($id, $data)) {
-            return redirect()->to('/expenses')->with('message', 'Transaction updated successfully!');
+            return redirect()->to('/transactions')->with('message', 'Transaction updated successfully!');
         }
 
         return redirect()->back()->with('error', 'Failed to update transaction.');
@@ -187,11 +187,9 @@ class TransactionsController extends BaseController
 
     public function export()
     {
-        // Load the Transactions Model
         $transactionModel = new Transaction();
-
-        // Fetch all transactions using the ORM
-        $transactions = $transactionModel->findAll();
+        $userId = session()->get('user_id');
+        $transactions = $transactionModel->getTransactionsByUser($userId);
 
         // Generate the PDF content
         $html = '<h1>Transactions List</h1>';

@@ -111,11 +111,11 @@
                         </a>
                     </li>
                     <li>
-                        <a href="/expenses">
+                        <a href="/transactions">
                             <span>
                                 <i class="fi fi-rr-donate"></i>
                             </span>
-                            <span class="nav-text">Expenses</span>
+                            <span class="nav-text">Transactions</span>
                         </a>
                     </li>
                     <li>
