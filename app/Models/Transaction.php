@@ -28,6 +28,32 @@ class Transaction extends Model
     protected $deletedField  = 'deleted_at';
 
 
+    public function getCurrentMonthIncome($userId)
+    {
+        $result = $this->select('SUM(transactions.amount) as total_income')
+            ->where('transactions.user_id', $userId)
+            ->where('transactions.type', 'Income')
+            ->where('MONTH(transactions.created_at)', date('m')) // Filter by the current month
+            ->where('YEAR(transactions.created_at)', date('Y')) // Filter by the current year
+            ->get()
+            ->getRow(); // Get a single row as an object
+
+        return $result ? $result->total_income : 0; // Return the total income, or 0 if no income found
+    }
+
+    public function getCurrentMonthExpenses($userId)
+    {
+        $result = $this->select('SUM(transactions.amount) as total_expenses')
+            ->where('transactions.user_id', $userId)
+            ->where('transactions.type', 'Expenses')
+            ->where('MONTH(transactions.created_at)', date('m')) // Filter by the current month
+            ->where('YEAR(transactions.created_at)', date('Y')) // Filter by the current year
+            ->get()
+            ->getRow(); // Get a single row as an object
+
+        return $result ? $result->total_expenses : 0; // Return the total expenses, or 0 if no expenses found
+    }
+
     public function getTotalExpenses($userId)
     {
         $result = $this->select('SUM(transactions.amount) as total_expenses')

@@ -11,6 +11,8 @@
     <!-- Custom Stylesheet -->
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./vendor/toastr/toastr.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+
 </head>
 
 <body class="dashboard">
@@ -32,6 +34,7 @@
                             <div class="header-left">
                                 <div class="brand-logo"><a class="mini-logo" href="/"><img
                                             src="./images/logoi.png" alt="" width="40"></a></div>
+                                <!-- Not functioning yet -->
                                 <div class="search">
                                     <form action="#">
                                         <div class="input-group">
@@ -276,6 +279,9 @@
                     </div>
                 </div>
             </div>
+            <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+            <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
             <script src="<?= base_url('vendor/jquery/jquery.min.js'); ?>"></script>
             <script src="<?= base_url('vendor/bootstrap/js/bootstrap.bundle.min.js'); ?>"></script>
             <script src="<?= base_url('vendor/toastr/toastr.min.js'); ?>"></script>

@@ -21,7 +21,7 @@ Transaction History
             <div class="card-body">
                 <div class="transaction-table">
                     <div class="table-responsive">
-                        <table class="table mb-0 table-responsive-sm">
+                        <table class="table mb-0 table-responsive-sm table-striped table-hover">
                             <thead>
                                 <tr>
                                     <th>Type</th>
@@ -36,7 +36,7 @@ Transaction History
                                 <?php if (!empty($transactions)): ?>
                                     <?php foreach ($transactions as $transaction): ?>
                                         <tr>
-                                            <td class="text-<?= esc($transaction['type']) === 'Income' ? 'success' : 'danger'; ?>">
+                                        <td class="text-<?= esc($transaction['type']) === 'Income' ? 'success' : 'danger'; ?>">
                                                 <?= esc($transaction['type']); ?>
                                             </td>
                                             <td>
@@ -46,7 +46,7 @@ Transaction History
                                                 <?= esc($transaction['description']); ?>
                                             </td>
                                             <td>
-                                                <?= esc(number_format($transaction['amount'], 2)); ?>
+                                                <?= esc(number_format($transaction['amount'],2)); ?>
                                             </td>
                                             <td>
                                                 <?= esc($transaction['currency']); ?>

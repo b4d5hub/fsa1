@@ -33,7 +33,7 @@ Income
             <div class="card-body">
                 <div class="transaction-table">
                     <div class="table-responsive">
-                        <table class="table mb-0 table-responsive-sm">
+                        <table class="table mb-0 table-responsive-sm table-striped table-hover">
                             <thead>
                                 <tr>
                                     <th>Category</th>
