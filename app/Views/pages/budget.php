@@ -11,9 +11,6 @@ Monthly Budget
                 <div class="budgets-tab-title d-flex justify-content-between align-items-center pb-2" style="float:right; width: 100%;">
                     <h3>My Monthly Budget</h3>
                     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editBudgetModal">Edit Budget</button>
-                    <!-- <form action="/" method="post">
-                        <button type="submit" class="btn btn-primary">Edit Budget</button>
-                    </form> -->
                 </div>
 
                 <div class="modal fade" id="editBudgetModal" tabindex="-1" aria-labelledby="editBudgetModalLabel" aria-hidden="true">

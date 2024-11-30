@@ -47,28 +47,6 @@ Profile
                 </div>
             </div>
             <div class="col-xl-8">
-                <!-- <div class="row">
-                    <div class="col-xl-6">
-                        <div class="stat-widget-1">
-                            <h6>Total Income</h6>
-                            <h3><?= esc($user['currency']) ?> 432568</h3>
-                            <p>
-                                <span class="text-success"><i class="fi fi-rr-arrow-trend-up"></i>2.47%</span>
-                                Last month <strong><?= esc($user['currency']) ?>24,478</strong>
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-xl-6">
-                        <div class="stat-widget-1">
-                            <h6>Total Expenses</h6>
-                            <h3><?= esc($user['currency']) ?> 432568</h3>
-                            <p>
-                                <span class="text-success"><i class="fi fi-rr-arrow-trend-up"></i>2.47%</span>
-                                Last month <strong><?= esc($user['currency']) ?>24,478</strong>
-                            </p>
-                        </div>
-                    </div>
-                </div> -->
                 <div class="card">
                     <div class="card-body">
                         <div class="d-flex align-items-center"><span class="me-3 icon-circle bg-warning text-white">

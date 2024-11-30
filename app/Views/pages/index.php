@@ -43,12 +43,6 @@
                                         <li class="nav-item">
                                             <a class="nav-link" href="#intro">Home</a>
                                         </li>
-                                        <!-- <li class="nav-item">
-                                            <a class="nav-link" href="#pages">Pages</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="#widgets">Widgets</a>
-                                        </li> -->
                                         <li class="nav-item">
                                             <a class="nav-link" href="#features">Features</a>
                                         </li>
@@ -131,64 +125,6 @@
                         </div>
                     </div>
                 </div>
-                <!-- <div class="row">
-                    <div class="col-xl-4">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="profile-wallet-nav">
-                                    <ul class="nav nav-tabs">
-                                        <li>
-                                            <a data-bs-toggle="tab" href="#city-bank" class="active">
-                                                <span class="icons usd">
-                                                    <i class="fi fi-rr-bank"></i>
-                                                </span>
-                                                City Bank
-                                                <span><i class="fi fi-bs-angle-right"></i></span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a data-bs-toggle="tab" href="#debit-card">
-                                                <span class="icons gift"><i class="fi fi-rr-credit-card"></i></span>
-                                                Debit Card
-                                                <span><i class="fi fi-bs-angle-right"></i></span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a data-bs-toggle="tab" href="#visa-card">
-                                                <span class="icons cart"><i class="fi fi-brands-visa"></i></span>
-                                                Visa Card
-                                                <span><i class="fi fi-bs-angle-right"></i></span>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-8">
-                        <div class="tab-content profile-wallet-tab">
-                            <div class="tab-pane fade show active" id="city-bank">
-                                <div class="card">
-                                    <div class="card-body">
-                                        
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="tab-pane fade" id="debit-card">
-                                <div class="card">
-                                    <div class="card-body">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="tab-pane fade" id="visa-card">
-                                <div class="card">
-                                    <div class="card-body">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div> -->
                 <div class="row">
                     <div class="col-lg-4">
                         <div class="features-content stepsbox">
@@ -328,7 +264,6 @@
                         <div class="section-title text-center">
                             <span>Reviews</span>
                             <h2>Real Users, Real Opinions – Read What Your Peers Have to Say!</h2>
-                            <!-- <p>Refreshing my inbox, waiting for your mail </p> -->
                         </div>
                     </div>
                 </div>
@@ -515,49 +450,8 @@
             </div>
         </div>
 
-
-        <!-- <div class="mobile__app">
-            <div class="container">
-                <div class="mobile__app-wrapper-3">
-                    <div class="row gy-50 align-items-end">
-                        <div class="col-xxl-6 col-xl-6 col-lg-6">
-                            <div class="mobile__app-content-3">
-                                <div class="section__title-wrapper mb-20">
-                                    <h2 class="section__title bd-text-white">Let’s Download Our Mobile App!</h2>
-                                </div>
-                                <p class="bd-text-white">Lorem ipsum dolor sit amet consectet adipiscing</p>
-                            </div>
-                        </div>
-                        <div class="col-xxl-6 col-xl-6 col-lg-6">
-                            <div class="app__download-wrapper p-relative d-flex justify-content-lg-end">
-                                <div class="app__shape d-none d-lg-block">
-                                    <img src="https://html.bdevs.net/finwise-prev/assets/imgs/shapes/app-arrow-3.png" alt="image not found">
-                                </div>
-                                <div class="mobile__app-download is-black">
-                                    <a class="app__download" href="#">
-                                        <img src="https://html.bdevs.net/finwise-prev/assets/imgs/app/play-store.png" alt="image not found">
-                                    </a>
-                                    <a class="app__download" href="#">
-                                        <img src="https://html.bdevs.net/finwise-prev/assets/imgs/app/apple-store.png" alt="image not found">
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> -->
         <div class="customer-support section-padding" id="support">
             <div class="container">
-                <!-- <div class="row py-lg-5 justify-content-center">
-                    <div class="col-xl-7">
-                        <div class="section-title text-center">
-                            <span>Problem?</span>
-                            <h2>Don't Worry, I am waiting your question</h2>
-                            <p>Refreshing my inbox, waiting for your mail </p>
-                        </div>
-                    </div>
-                </div> -->
                 <div class="row">
                     <div class="card p-4 col-lg-12">
                         <div class="col-xxl-12 col-xl-12 col-lg-12">
@@ -582,41 +476,6 @@
                         </div>
                     </div>
                 </div>
-                <!-- <div class="row">
-                    <div class="col-md-6">
-                        <div class="customer-support-content">
-                            <span><i class="fi fi-brands-whatsapp"></i></span>
-                            <h4>+96897425480</h4>
-                            <p>Without sleeping time, I am avaiable in Whstsapp. I recommend Whstsapp</p>
-                            <a href="https://api.whatsapp.com/send?phone=0096897425480">Send Message <i class="la la-angle-right"></i></a>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="customer-support-content">
-                            <span><i class="fi fi-brands-skype"></i></span>
-                            <h4>sporsho9</h4>
-                            <p>Without sleeping time, I am avaiable in skype. I also recommend Skype</p>
-                            <a href="skype:profile_name?sporsho9">Add Skype <i class="la la-angle-right"></i></a>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="customer-support-content">
-                            <span><i class="fi fi-rr-envelope"></i></span>
-                            <h4>imsaifun@gmail.com</h4>
-                            <p>When you send me email, I get notification, and quickly reply you</p>
-                            <a href="mailto:imsaifun@gmail.com">Send Email <i class="la la-angle-right"></i></a>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="customer-support-content">
-                            <span><i class="fi fi-rr-headset"></i></span>
-                            <h4>Pre sale question</h4>
-                            <p>You have need more design or customization? Dont worry about Quality</p>
-                            <a href="https://docs.google.com/forms/d/e/1FAIpQLSflTWPNbUwxUvIDLWx8TlzmDOWt1PgNCX4_TZ59yok-MlzXkg/viewform" target="_blank">Hire
-                                Now <i class="la la-angle-right"></i></a>
-                        </div>
-                    </div>
-                </div> -->
             </div>
         </div>
         <div class="footer-landing">
