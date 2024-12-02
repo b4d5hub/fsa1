@@ -19,7 +19,6 @@ class AddBudgetEmailFlagToUsers extends Migration
 
     public function down()
     {
-        //
         $this->forge->dropColumn('users', 'budget_email_sent');
     }
 }
