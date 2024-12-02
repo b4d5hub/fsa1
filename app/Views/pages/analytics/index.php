@@ -58,7 +58,7 @@ Analytics
     <div class="col-xl-12">
         <div class="card">
             <div class="card-header">
-                <h4 class="card-title">Transactions Overview </h4>
+                <h4 class="card-title">Monthly Overview </h4>
             </div>
             <div class="card-body">
                 <canvas id="chartjsIncomeVsExpense"></canvas>

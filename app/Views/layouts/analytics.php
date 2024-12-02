@@ -19,11 +19,7 @@ Analytics
 </div>
 </div>
 </div>
-<?= $this->endSection() ?>
-<script src="<?= base_url('vendor/jquery/jquery.min.js'); ?>"></script>
-<script src="<?= base_url('vendor/bootstrap/js/bootstrap.bundle.min.js'); ?>"></script>
-<script src="<?= base_url('vendor/chartjs/chartjs.js'); ?>"></script>
-<script src="<?= base_url('js/plugins/chartjs-donut.js'); ?>"></script>
-<script src="<?= base_url('js/scripts.js'); ?>"></script>
+
 <script src="<?= base_url('js/plugins/chartjs-line-balance-wallet.js'); ?>"></script>
 <script src="<?= base_url('js/plugins/chartjs-line-total-balance.js'); ?>"></script>
+<?= $this->endSection() ?>

@@ -9,8 +9,8 @@
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="./images/favicon.png">
     <!-- Custom Stylesheet -->
-    <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="./vendor/toastr/toastr.min.css">
+    <link rel="stylesheet" href="<?= base_url('css/style.css'); ?>">
+    <link rel="stylesheet" href="<?= base_url('vendor/toastr/toastr.min.css'); ?>">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
 
 </head>
@@ -197,27 +197,30 @@
                     </div>
                 </div>
             </div>
-            <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
-            <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+            <!-- <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script> -->
+            <!-- <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script> -->
 
             <script src="<?= base_url('vendor/jquery/jquery.min.js'); ?>"></script>
+            <script src="<?= base_url('js/scripts.js'); ?>"></script>
+            <script src="<?= base_url('vendor/chartjs/chartjs.js'); ?>"></script>
             <script src="<?= base_url('vendor/bootstrap/js/bootstrap.bundle.min.js'); ?>"></script>
-            <script src="<?= base_url('vendor/toastr/toastr.min.js'); ?>"></script>
-            <!-- <script src="./vendor/toastr/toastr-init.js'); ?>"></script> -->
             <script src="<?= base_url('vendor/circle-progress/circle-progress.min.js'); ?>"></script>
             <script src="<?= base_url('vendor/circle-progress/circle-progress-init.js'); ?>"></script>
-            <script src="<?= base_url('vendor/chartjs/chartjs.js'); ?>"></script>
             <script src="<?= base_url('js/plugins/chartjs-bar-income-vs-expense.js'); ?>"></script>
-            <script src="<?= base_url('js/plugins/chartjs-bar-weekly-expense.js'); ?>"></script>
+            <script src="<?= base_url('js/plugins/chartjs-area.js'); ?>"></script>
+            <script src="<?= base_url('js/plugins/chartjs-expenses-bar.js'); ?>"></script>
             <script src="<?= base_url('js/plugins/chartjs-profile-wallet.js'); ?>"></script>
+            <script src="<?= base_url('js/plugins/chartjs-donut.js'); ?>"></script>
+
+            <!-- <script src="<?= base_url('vendor/toastr/toastr.min.js'); ?>"></script>
+            <script src="<?= base_url('js/plugins/chartjs-bar-weekly-expense.js'); ?>"></script>
+            <script src="<?= base_url('js/plugins/chartjs-donut-expenses.js'); ?>"></script>
             <script src="<?= base_url('js/plugins/chartjs-profile-wallet2.js'); ?>"></script>
             <script src="<?= base_url('js/plugins/chartjs-profile-wallet3.js'); ?>"></script>
             <script src="<?= base_url('js/plugins/chartjs-profile-wallet4.js'); ?>"></script>
-            <script src="<?= base_url('vendor/perfect-scrollbar/perfect-scrollbar.min.js'); ?>"></script>
             <script src="<?= base_url('js/plugins/perfect-scrollbar-init.js'); ?>"></script>
             <script src="<?= base_url('vendor/circle-progress/circle-progress.min.js'); ?>"></script>
-            <script src="<?= base_url('js/plugins/circle-progress-init.js'); ?>"></script>
-            <script src="<?= base_url('js/scripts.js'); ?>"></script>
+            <script src="<?= base_url('js/plugins/circle-progress-init.js'); ?>"></script> -->
 </body>
 
 </html>

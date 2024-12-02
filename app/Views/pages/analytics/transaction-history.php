@@ -1,11 +1,11 @@
 <?= $this->extend('layouts/analytics') ?>
 
 <?= $this->section('title') ?>
-Transaction History
+Transactions History
 <?= $this->endSection() ?>
 
 <?= $this->section('h3title') ?>
-Transaction History
+Transactions History
 <?= $this->endSection() ?>
 
 <?= $this->section('analytics-content') ?>
@@ -13,9 +13,9 @@ Transaction History
     <div class="col-xl-12">
         <div class="card">
             <div class="card-header">
-                <h4 class="card-title">Transaction History</h4>
+                <h4 class="card-title">Transactions History</h4>
                 <form action="<?= base_url('/transactions/export') ?>" method="post">
-                    <button type="submit" class="btn btn-danger">Export Transactions</button>
+                    <button type="submit" class="btn btn-danger">Export</button>
                 </form>
             </div>
             <div class="card-body">

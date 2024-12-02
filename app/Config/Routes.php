@@ -45,7 +45,9 @@ $routes->post('/categories/delete/(:num)', 'CategoriesController::deleteCategory
 //expenses
 $routes->get('/transactions', 'TransactionsController::index', ['filter' => 'auth']);
 $routes->post('/transactions/add', 'TransactionsController::addTransaction', ['filter' => 'auth']);
-$routes->post('/transactions/export', 'TransactionsController::export', ['filter' => 'auth']);
+$routes->post('/transactions/export', 'TransactionsController::exportall', ['filter' => 'auth']);
+$routes->post('/transactions/exportincome', 'TransactionsController::exportincome', ['filter' => 'auth']);
+$routes->post('/transactions/exportexpenses', 'TransactionsController::exportexpenses', ['filter' => 'auth']);
 $routes->post('/transactions/delete/(:num)', 'TransactionsController::deleteTransaction/$1', ['filter' => 'auth']);
 $routes->post('transactions/update/(:num)', 'TransactionsController::updateTransaction/$1');
 
@@ -58,6 +60,8 @@ $routes->get('/analytics-transaction-history', 'TransactionsController::historiq
 $routes->get('/income-expense-data', 'ChartController::getIncomeVsExpenseData');
 $routes->get('/dataincome', 'ChartController::getIncomeData', ['filter' => 'auth']);
 $routes->get('/dataexponses', 'ChartController::getExpensesData', ['filter' => 'auth']); //pour chart expenses
+$routes->get('/transactionData', 'ChartController::getTransactionDataforAreaChart', ['filter' => 'auth']);
+
 
 //profile
 $routes->get('/profile', 'AuthController::profile', ['filter' => 'auth']);

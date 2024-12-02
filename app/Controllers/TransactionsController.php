@@ -40,6 +40,7 @@ class TransactionsController extends BaseController
     public function addTransaction()
     {
         $userId = $this->session->get('user_id');
+        $user = $this->userModel->getUser($userId);
 
         // Retrieve form data
         $type = $this->request->getPost('type');
@@ -61,15 +62,36 @@ class TransactionsController extends BaseController
             return redirect()->to('/transactions')->with('error', 'All fields must be filled');
         }
 
+
+        // Get the latest transaction date for the user
+        $transactionModel = new Transaction();
+        $latestTransaction = $transactionModel
+            ->where('user_id', $userId)
+            ->orderBy('created_at', 'DESC')
+            ->findAll(1, 1);
+        $lasttrandate = $latestTransaction[0]['created_at'];
+
+        if ($latestTransaction) {
+            $latestDate = new \DateTime($lasttrandate);
+            $newDate = new \DateTime();
+
+            // Check if the new transaction is in a new month
+            if ($latestDate->format('Y-m') < $newDate->format('Y-m')) {
+                // Reset the budget_email_sent flag for the user
+                $this->userModel->update($userId, ['budget_email_sent' => false]);
+            }
+        }
+
         // $currentMonthIncome = $this->transactionModel->getCurrentMonthIncome($userId);
-        $currentMonthExpenses = $this->transactionModel->getCurrentMonthExpenses($userId);
         // $currentMonthBalance = $currentMonthIncome - $currentMonthExpenses;
+        $currentMonthExpenses = $this->transactionModel->getCurrentMonthExpenses($userId);
 
         $budget = $this->userModel->getUser($userId)['budget'];
 
-        if ($currentMonthExpenses > $budget) {
+        if ($currentMonthExpenses > $budget && $type = 'Expenses' && !$user['budget_email_sent']) {
+
             // Get user's email
-            $userEmail = $this->userModel->getUser($userId)['email'];
+            $userEmail = $user['email'];
 
             // Send warning email
             $email = \Config\Services::email();
@@ -78,13 +100,14 @@ class TransactionsController extends BaseController
             $email->setReplyTo('trackwisecom@gmail.com', 'TrackWise');
             $email->setSubject('Budget Exceeded Warning');
             $email->setMessage(
-                "Dear User,\n\nYour total expenses of $currency " . number_format($currentMonthExpenses, 2) .
-                    " has exceeded your monthly budget of $currency " . number_format($budget, 2) .
+                "Dear User,\n\nYour total expenses of $currency" . number_format($currentMonthExpenses, 0) .
+                    " has exceeded your monthly budget of $currency" . number_format($budget, 0) .
                     ".\n\nPlease review your transactions.\n\nBest regards,\nTrackWise Team"
             );
             if (!$email->send()) {
                 return redirect()->to('/transactions')->with('error', 'Transaction added successfully! SMTP error occured, notify the WebMaster as soon as possible!');
             }
+            $this->userModel->update($userId, ['budget_email_sent' => true]);
         }
 
 
@@ -185,14 +208,14 @@ class TransactionsController extends BaseController
     }
 
 
-    public function export()
+    public function exportall()
     {
         $transactionModel = new Transaction();
         $userId = session()->get('user_id');
         $transactions = $transactionModel->getTransactionsByUser($userId);
 
         // Generate the PDF content
-        $html = '<h1>Transactions List</h1>';
+        $html = '<h1>Full Transactions List</h1>';
         $html .= '<table border="1" width="100%" cellpadding="5" cellspacing="0">';
         $html .= '<thead>
                     <tr>
@@ -229,9 +252,112 @@ class TransactionsController extends BaseController
         // Render the PDF
         $dompdf->render();
 
-        // Output the PDF to the browser
-        return $this->response
-            ->setHeader('Content-Type', 'application/pdf')
-            ->setBody($dompdf->output());
+        // Download the PDF
+        $this->response->setHeader('Content-Type', 'application/pdf');
+        $this->response->setHeader('Content-Disposition', 'attachment; filename="transactions_list.pdf"');
+
+        return $this->response->setBody($dompdf->output());
+    }
+
+    public function exportincome()
+    {
+        $transactionModel = new Transaction();
+        $userId = session()->get('user_id');
+        $transactions = $transactionModel->getIncomeTransactions($userId);
+
+        // Generate the PDF content
+        $html = '<h1>Income Transactions List</h1>';
+        $html .= '<table border="1" width="100%" cellpadding="5" cellspacing="0">';
+        $html .= '<thead>
+                    <tr>
+                        <th>Type</th>
+                        <th>Description</th>
+                        <th>Amount</th>
+                        <th>Date</th>
+                    </tr>
+                  </thead>';
+        $html .= '<tbody>';
+        foreach ($transactions as $transaction) {
+            $html .= '<tr>
+                        <td>' . $transaction['type'] . '</td>
+                        <td>' . $transaction['description'] . '</td>
+                        <td>' . $transaction['amount'] . '</td>
+                        <td>' . $transaction['created_at'] . '</td>
+                      </tr>';
+        }
+        $html .= '</tbody>';
+        $html .= '</table>';
+        $html .= '<h4>Generated by TrackWise</h4>';
+
+        // Configure Dompdf
+        $options = new Options();
+        $options->set('isHtml5ParserEnabled', true);
+        $dompdf = new Dompdf($options);
+
+        // Load HTML into Dompdf
+        $dompdf->loadHtml($html);
+
+        // Set paper size and orientation
+        $dompdf->setPaper('A4', 'portrait');
+
+        // Render the PDF
+        $dompdf->render();
+
+        // Download the PDF
+        $this->response->setHeader('Content-Type', 'application/pdf');
+        $this->response->setHeader('Content-Disposition', 'attachment; filename="income_transactions_list.pdf"');
+
+        return $this->response->setBody($dompdf->output());
+    }
+
+    public function exportexpenses()
+    {
+        $transactionModel = new Transaction();
+        $userId = session()->get('user_id');
+        $transactions = $transactionModel->getExponsesTransactions($userId);
+
+        // Generate the PDF content
+        $html = '<h1>Expense Transactions List</h1>';
+        $html .= '<table border="1" width="100%" cellpadding="5" cellspacing="0">';
+        $html .= '<thead>
+                    <tr>
+                        <th>Type</th>
+                        <th>Description</th>
+                        <th>Amount</th>
+                        <th>Date</th>
+                    </tr>
+                  </thead>';
+        $html .= '<tbody>';
+        foreach ($transactions as $transaction) {
+            $html .= '<tr>
+                        <td>' . $transaction['type'] . '</td>
+                        <td>' . $transaction['description'] . '</td>
+                        <td>' . $transaction['amount'] . '</td>
+                        <td>' . $transaction['created_at'] . '</td>
+                      </tr>';
+        }
+        $html .= '</tbody>';
+        $html .= '</table>';
+        $html .= '<h4>Generated by TrackWise</h4>';
+
+        // Configure Dompdf
+        $options = new Options();
+        $options->set('isHtml5ParserEnabled', true);
+        $dompdf = new Dompdf($options);
+
+        // Load HTML into Dompdf
+        $dompdf->loadHtml($html);
+
+        // Set paper size and orientation
+        $dompdf->setPaper('A4', 'portrait');
+
+        // Render the PDF
+        $dompdf->render();
+
+        // Download the PDF
+        $this->response->setHeader('Content-Type', 'application/pdf');
+        $this->response->setHeader('Content-Disposition', 'attachment; filename="expenses_transactions_list.pdf"');
+
+        return $this->response->setBody($dompdf->output());
     }
 }

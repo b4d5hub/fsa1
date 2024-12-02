@@ -10,7 +10,7 @@ Income
 
 <?= $this->section('analytics-content') ?>
 <div class="row">
-    <div class=" col-xxl-4 col-xl-4 col-lg-6 col-md-12">
+    <!-- <div class=" col-xxl-4 col-xl-4 col-lg-6 col-md-12">
         <div class="card">
             <div class="card-header">
                 <h4 class="card-title">Income Breakdown</h4>
@@ -19,16 +19,32 @@ Income
                 <canvas id="chartjsDonut"></canvas>
                 <div class="list-1 mt-3">
                     <ul id="incomeList">
-                        <!-- The list will be dynamically updated -->
                     </ul>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="col-xl-8">
+    </div> -->
+    <div class="col-xl-12">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="card-title">Income Breakdown</h4>
+                <div id="area-chart-action">
+                    <span class="active">Day</span>
+                    <span>Week</span>
+                    <span>Month</span>
+                    <span>Year</span>
+                </div>
+            </div>
+            <div class="card-body">
+                <canvas id="inc" height="200" class="chartjs chartjs-render-monitor"></canvas>
+            </div>
+        </div>
         <div class="card">
             <div class="card-header">
                 <h4 class="card-title">Transaction History</h4>
+                <form action="<?= base_url('/transactions/exportincome') ?>" method="post">
+                    <button type="submit" class="btn btn-danger">Export</button>
+                </form>
             </div>
             <div class="card-body">
                 <div class="transaction-table">
@@ -59,7 +75,7 @@ Income
                                             <?= esc($transaction['description']) ?>
                                         </td>
                                         <td>
-                                            <?= esc(number_format($transaction['amount'])) ?>
+                                            <?= esc(number_format($transaction['amount'],2)) ?>
                                         </td>
                                         <td>
                                             <?= esc($transaction['currency']) ?>

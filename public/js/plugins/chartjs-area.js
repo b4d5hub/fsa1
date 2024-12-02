@@ -1,129 +1,330 @@
-const profileWallet = document.getElementById("profileWallet")
-if (profileWallet !== null) {
-    const profileWalletData = [
-        {
-            first: [0, 65, 52, 115, 98, 165, 125],
-            second: [40, 105, 92, 155, 138, 205, 165]
-        },
-        {
-            first: [0, 65, 77, 33, 49, 100, 100],
-            second: [20, 85, 97, 53, 69, 120, 120]
-        },
-        {
-            first: [0, 40, 77, 55, 33, 116, 50],
-            second: [30, 70, 107, 85, 73, 146, 80,]
-        },
-        {
-            first: [0, 44, 22, 77, 33, 151, 99],
-            second: [60, 32, 120, 55, 19, 134, 88]
-        }
-    ]
-    // profileWallet.height = 100
+/////////////////////////////////////////
+//Income vs Expenses
+/////////////////////////////////////////
 
-    var config = {
-        type: "line",
-        data: {
-            labels: [
-                "4 Jan",
-                "5 Jan",
-                "6 Jan",
-                "7 Jan",
-                "8 Jan",
-                "9 Jan",
-                "10 Jan"
-            ],
-            datasets: [
-                {
-                    label: "Active",
-                    backgroundColor: "rgba(93, 120, 255, 0.9)",
-                    borderColor: "transparent",
-                    data: profileWalletData[0].first,
-                    lineTension: 0,
-                    pointRadius: 0,
-                    borderWidth: 2,
-                },
-                {
-                    label: "Inactive",
-                    backgroundColor: 'rgba(240, 243, 255, 1)',
-                    borderColor: "transparent",
-                    data: profileWalletData[0].second,
-                    lineTension: 0,
-                    // borderDash: [10, 5],
-                    borderWidth: 1,
-                    pointRadius: 0,
-                }
-            ]
+document.addEventListener("DOMContentLoaded", function () {
+  const profileWallet = document.getElementById("expvsinc");
+
+  if (profileWallet !== null) {
+    const ctx = profileWallet.getContext("2d");
+
+    // Chart configuration
+    const config = {
+      type: "line",
+      data: {
+        labels: [],
+        datasets: [
+          {
+            label: "Expenses",
+            backgroundColor: "rgba(255, 99, 132, 0.2)",
+            borderColor: "rgba(255, 99, 132, 1)",
+            data: [],
+            fill: true,
+            lineTension: 0.1,
+          },
+          {
+            label: "Income",
+            backgroundColor: "rgba(54, 162, 235, 0.2)",
+            borderColor: "rgba(54, 162, 235, 1)",
+            data: [],
+            fill: true,
+            lineTension: 0.1,
+          },
+        ],
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        scales: {
+          xAxes: [
+            {
+              gridLines: {
+                display: false,
+              },
+              ticks: {
+                fontColor: "#8a909d",
+                fontFamily: "Rubik, sans-serif",
+              },
+            },
+          ],
+          yAxes: [
+            {
+              gridLines: {
+                color: "rgba(0,0,0,0.071)",
+                zeroLineColor: "rgba(0,0,0,0.071)",
+              },
+              ticks: {
+                stepSize: 50,
+                fontColor: "#8a909d",
+                fontFamily: "Rubik, sans-serif",
+              },
+            },
+          ],
         },
-        options: {
-            responsive: true,
-            maintainAspectRatio: false,
-            legend: {
-                display: false
-            },
-            scales: {
-                xAxes: [{
-                    gridLines: {
-                        display: false,
-                        drawBorder: true,
-                        // fontFamily: "Rubik, sans-serif",
-                    },
-                    ticks: {
-                        fontColor: "#8a909d",
-                        fontFamily: "Rubik, sans-serif",
-                    },
-                }
-                ],
-                yAxes: [
-                    {
-                        gridLines: {
-                            fontColor: "#8a909d",
-                            // fontFamily: "Rubik, sans-serif",
-                            display: false,
-                            color: "rgba(0,0,0,0.071)",
-                            zeroLineColor: "rgba(0,0,0,0.071)"
-                        },
-                        ticks: {
-                            stepSize: 50,
-                            fontColor: "#8a909d",
-                            fontFamily: "Rubik, sans-serif"
-                        }
-                    }
-                ]
-            },
-            tooltips: {
-                mode: "index",
-                intersect: false,
-                titleFontColor: "#888",
-                bodyFontColor: "#555",
-                titleFontSize: 12,
-                bodyFontSize: 15,
-                backgroundColor: "rgba(256,256,256,0.95)",
-                displayColors: true,
-                xPadding: 10,
-                yPadding: 7,
-                borderColor: "rgba(220, 220, 220, 0.9)",
-                borderWidth: 2,
-                caretSize: 6,
-                caretPadding: 5
-            }
-        }
+      },
+    };
+
+    const myLine = new Chart(ctx, config);
+
+    // Fetch data from the server based on the selected timeframe
+    function fetchTransactionData(timeframe) {
+      console.log(`Fetching data for: ${timeframe}`); // Debugging log
+      fetch(`http://localhost:8080/transactionData?timeframe=${timeframe}`)
+        .then((response) => {
+          console.log("Server response:", response); // Debugging log
+          if (!response.ok) throw new Error("Failed to fetch data");
+          return response.json();
+        })
+        .then((data) => {
+          console.log("Fetched data:", data); // Debugging log
+
+          const labels = data.map((item) => item.date);
+          const expenses = data.map((item) => item.expenses);
+          const income = data.map((item) => item.income);
+
+          // Update chart data
+          config.data.labels = labels;
+          config.data.datasets[0].data = expenses;
+          config.data.datasets[1].data = income;
+
+          // Update the chart
+          myLine.update();
+        })
+        .catch((error) =>
+          console.error("Error fetching transaction data:", error)
+        );
     }
 
-    const ctx = document.getElementById("profileWallet").getContext("2d")
-    const myLine = new Chart(ctx, config)
+    // Add click event listeners to the area-chart-action spans
+    const actions = document.querySelectorAll("#area-chart-action span");
+    actions.forEach((action) => {
+      action.addEventListener("click", function () {
+        console.log(`Clicked: ${this.textContent.trim()}`);
+        // Highlight the selected action
+        actions.forEach((span) => span.classList.remove("active"));
+        this.classList.add("active");
 
-    const items = document.querySelectorAll("#area-chart-action span")
-    items.forEach(function (item, index) {
-        item.addEventListener("click", function () {
-            config.data.datasets[0].data = profileWalletData[index].first
-            config.data.datasets[1].data = profileWalletData[index].second
-            myLine.update()
+        // Fetch and update the chart data based on the clicked action
+        const timeframe = this.textContent.trim().toLowerCase(); // day, week, month, year
+        fetchTransactionData(timeframe);
+      });
+    });
+
+    // Fetch initial data for "Day" by default
+    fetchTransactionData("day");
+  }
+});
+
+/////////////////////////////////////////
+//Expenses
+/////////////////////////////////////////
+
+document.addEventListener("DOMContentLoaded", function () {
+  const profileWallet = document.getElementById("exps");
+
+  if (profileWallet !== null) {
+    const ctx = profileWallet.getContext("2d");
+
+    // Chart configuration for expenses only
+    const config = {
+      type: "line",
+      data: {
+        labels: [],
+        datasets: [
+          {
+            label: "Expenses",
+            backgroundColor: "rgba(255, 99, 132, 0.2)",
+            borderColor: "rgba(255, 99, 132, 1)",
+            data: [], // Only include expenses data
+            fill: true,
+            lineTension: 0.1,
+          },
+        ],
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        scales: {
+          xAxes: [
+            {
+              gridLines: {
+                display: false,
+              },
+              ticks: {
+                fontColor: "#8a909d",
+                fontFamily: "Rubik, sans-serif",
+              },
+            },
+          ],
+          yAxes: [
+            {
+              gridLines: {
+                color: "rgba(0,0,0,0.071)",
+                zeroLineColor: "rgba(0,0,0,0.071)",
+              },
+              ticks: {
+                stepSize: 50,
+                fontColor: "#8a909d",
+                fontFamily: "Rubik, sans-serif",
+              },
+            },
+          ],
+        },
+      },
+    };
+
+    const myLine = new Chart(ctx, config);
+
+    // Fetch data from the server for expenses only
+    function fetchTransactionData(timeframe) {
+      console.log(`Fetching expenses data for: ${timeframe}`); // Debugging log
+      fetch(`http://localhost:8080/transactionData?timeframe=${timeframe}`)
+        .then((response) => {
+          console.log("Server response:", response); // Debugging log
+          if (!response.ok) throw new Error("Failed to fetch data");
+          return response.json();
         })
-    })
-}
+        .then((data) => {
+          console.log("Fetched data:", data); // Debugging log
 
+          const labels = data.map((item) => item.date);
+          const expenses = data.map((item) => item.expenses); // Only fetch expenses data
 
+          // Update chart data
+          config.data.labels = labels;
+          config.data.datasets[0].data = expenses;
 
+          // Update the chart
+          myLine.update();
+        })
+        .catch((error) =>
+          console.error("Error fetching transaction data:", error)
+        );
+    }
 
+    // Add click event listeners to the area-chart-action spans
+    const actions = document.querySelectorAll("#area-chart-action span");
+    actions.forEach((action) => {
+      action.addEventListener("click", function () {
+        console.log(`Clicked: ${this.textContent.trim()}`);
+        // Highlight the selected action
+        actions.forEach((span) => span.classList.remove("active"));
+        this.classList.add("active");
 
-// profileWallet
+        // Fetch and update the chart data based on the clicked action
+        const timeframe = this.textContent.trim().toLowerCase(); // day, week, month, year
+        fetchTransactionData(timeframe);
+      });
+    });
+
+    // Fetch initial data for "Day" by default
+    fetchTransactionData("day");
+  }
+});
+
+/////////////////////////////////////////
+//Income
+/////////////////////////////////////////
+
+document.addEventListener("DOMContentLoaded", function () {
+  const profileWallet = document.getElementById("inc");
+
+  if (profileWallet !== null) {
+    const ctx = profileWallet.getContext("2d");
+
+    // Chart configuration for income only
+    const config = {
+      type: "line",
+      data: {
+        labels: [],
+        datasets: [
+          {
+            label: "Income",
+            backgroundColor: "rgba(54, 162, 235, 0.2)",
+            borderColor: "rgba(54, 162, 235, 1)",
+            data: [], // Only include income data
+            fill: true,
+            lineTension: 0.1,
+          },
+        ],
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        scales: {
+          xAxes: [
+            {
+              gridLines: {
+                display: false,
+              },
+              ticks: {
+                fontColor: "#8a909d",
+                fontFamily: "Rubik, sans-serif",
+              },
+            },
+          ],
+          yAxes: [
+            {
+              gridLines: {
+                color: "rgba(0,0,0,0.071)",
+                zeroLineColor: "rgba(0,0,0,0.071)",
+              },
+              ticks: {
+                stepSize: 50,
+                fontColor: "#8a909d",
+                fontFamily: "Rubik, sans-serif",
+              },
+            },
+          ],
+        },
+      },
+    };
+
+    const myLine = new Chart(ctx, config);
+
+    // Fetch data from the server for income only
+    function fetchTransactionData(timeframe) {
+      console.log(`Fetching income data for: ${timeframe}`); // Debugging log
+      fetch(`http://localhost:8080/transactionData?timeframe=${timeframe}`)
+        .then((response) => {
+          console.log("Server response:", response); // Debugging log
+          if (!response.ok) throw new Error("Failed to fetch data");
+          return response.json();
+        })
+        .then((data) => {
+          console.log("Fetched data:", data); // Debugging log
+
+          const labels = data.map((item) => item.date);
+          const income = data.map((item) => item.income); // Only fetch income data
+
+          // Update chart data
+          config.data.labels = labels;
+          config.data.datasets[0].data = income;
+
+          // Update the chart
+          myLine.update();
+        })
+        .catch((error) =>
+          console.error("Error fetching transaction data:", error)
+        );
+    }
+
+    // Add click event listeners to the area-chart-action spans
+    const actions = document.querySelectorAll("#area-chart-action span");
+    actions.forEach((action) => {
+      action.addEventListener("click", function () {
+        console.log(`Clicked: ${this.textContent.trim()}`);
+        // Highlight the selected action
+        actions.forEach((span) => span.classList.remove("active"));
+        this.classList.add("active");
+
+        // Fetch and update the chart data based on the clicked action
+        const timeframe = this.textContent.trim().toLowerCase(); // day, week, month, year
+        fetchTransactionData(timeframe);
+      });
+    });
+
+    // Fetch initial data for "Day" by default
+    fetchTransactionData("day");
+  }
+});

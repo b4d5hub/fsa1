@@ -13,6 +13,7 @@ Monthly Budget
                     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editBudgetModal">Edit Budget</button>
                 </div>
 
+                <!-- edit bootstrap bugdet modal -->
                 <div class="modal fade" id="editBudgetModal" tabindex="-1" aria-labelledby="editBudgetModalLabel" aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">

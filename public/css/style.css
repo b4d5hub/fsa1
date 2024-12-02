@@ -19856,4 +19856,25 @@ Section FAQs (Frequently Asked questions) Home1: End
   width: 100%;
 }
 
+#area-chart-action span {
+  cursor: pointer;
+  margin-right: 10px;
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  color: #333;
+}
+
+#area-chart-action span.active {
+  background-color: #5d78ff;
+  color: #fff;
+  border-color: #5d78ff;
+}
+
+.table-description {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 20vw;
+}
+
 /*# sourceMappingURL=style.css.map */

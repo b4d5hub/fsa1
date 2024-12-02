@@ -34,6 +34,8 @@ class BudgetController extends BaseController
             ->selectSum('amount', 'total_spent')
             ->where('user_id', $userId)
             ->where('type', 'Expenses')
+            ->where('created_at >=', date('Y-m-01 00:00:00')) // First day of the current month
+            ->where('created_at <=', date('Y-m-t 23:59:59'))  // Last day of the current month
             ->get()
             ->getRow()
             ->total_spent ?? 0;
