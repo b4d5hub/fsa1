@@ -41,7 +41,7 @@ class DatabaseSeeder extends Seeder
 
         $this->db->table('categories')->insertBatch($categories);
 
-        // Fetch the inserted category IDs
+        // Fetch the inserted category IDs 
         $categoryIds = $this->db->table('categories')->select('id')->where('user_id', $userId)->get()->getResultArray();
         $categoryIds = array_column($categoryIds, 'id');
 
