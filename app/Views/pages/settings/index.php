@@ -56,33 +56,21 @@ Settings - Account
             </div>
         </div>
     </div>
-    <div class="col-xl-12">
-        <div class="card">
-            <div class="card-header">
-                <h4 class="card-title">Notifications</h4>
-            </div>
-            <div class="card-body">
-                <form action="">
-                    <div class="row col-6">
-                        <div class="mb-3 mb-0">
-                            <label class="toggle">
-                                <input class="toggle-checkbox" type="checkbox" checked>
-                                <div class="toggle-switch"></div>
-                                <span class="toggle-label">I hit my monthly budget</span>
-                            </label>
-                            <label class="toggle">
-                                <input class="toggle-checkbox" type="checkbox">
-                                <div class="toggle-switch"></div>
-                                <span class="toggle-label">I change my account credentials</span>
-                            </label>
-                        </div>
-                        <div class="col-12">
-                            <button class="btn btn-primary">Save</button>
+    <div class="col-xl-8">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center"><span class="me-3 icon-circle bg-warning text-white">
+                                <i class="fi fi-rs-trash"></i></span>
+                            <div>
+                                <h5 class="mb-0">Close Account.</h5>
+                                <p>All data will be erased, <span class="text-danger">this cannot be undone</span></p>
+                                <form action="<?= base_url('auth/delete') ?>" method="POST">
+                                    <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete your account? This cannot be undone.')">Close Account</button>
+                                </form>
+                            </div>
                         </div>
                     </div>
-                </form>
+                </div>
             </div>
-        </div>
-    </div>
 </div>
 <?= $this->endSection() ?>

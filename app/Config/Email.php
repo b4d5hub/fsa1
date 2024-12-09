@@ -128,10 +128,10 @@ class Email extends BaseConfig
     public string $protocol   = 'smtp'; // Ensure SMTP is set
     public string $SMTPHost   = 'smtp.gmail.com';
     public string $SMTPUser   = 'trackwisecom@gmail.com';
-    public string $SMTPPass   = 'bitm qvoe kuqr nwhi'; // Use your Gmail App Password
+    public string $SMTPPass   = 'incr hhrt hlzr pwrt'; // Use your Gmail App Password
     public int    $SMTPPort   = 587;
     public string $SMTPCrypto = 'tls'; // Use TLS
-    public string $mailType   = 'text'; // or 'html'
+    public $mailType = 'html'; // or 'html'
     public string $charset    = 'utf-8';
     public bool   $wordWrap   = true;
 }

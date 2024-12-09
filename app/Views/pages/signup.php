@@ -36,6 +36,7 @@
                                             <img src="/images/logo-white.png" alt="" width="30" /></a>
                                     </div>
                                     <h3>Welcome to TrackWise</h3>
+                                    
                                 </div>
                                 <div class="privacy-social">
                                     <div class="privacy-link"><a href="/contact">Have an issue signing up?</a></div>

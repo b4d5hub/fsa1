@@ -69,14 +69,7 @@
                                             <label class="form-label">Password</label>
                                             <input name="password" type="text" class="form-control" />
                                         </div>
-                                        <div class="col-6">
-                                            <div class="form-check">
-                                                <input name="acceptTerms" id="acceptTerms" type="checkbox"
-                                                    class="form-check-input" />
-                                                <label class="form-check-label" for="acceptTerms">Remember me</label>
-                                            </div>
-                                        </div>
-                                        <div class="col-6 text-end"><a href="/reset">Forgot Password?</a></div>
+                                        
                                     </div>
                                     <div class="mt-3 d-grid gap-2"><button type="submit"
                                             class="btn btn-primary me-8 text-white">Sign In</button></div>

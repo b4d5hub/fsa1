@@ -69,6 +69,4 @@ $routes->get('/profile', 'AuthController::profile', ['filter' => 'auth']);
 //settings
 $routes->get('/settings', 'AuthController::settings', ['filter' => 'auth']);
 $routes->get('/settings-profile', 'AuthController::profilesettings', ['filter' => 'auth']);
-$routes->get('/support', function () {
-    return view('pages/support');
-}, ['filter' => 'auth']);
+$routes->post('/submit-reclamation', 'Reclamation::submit', );

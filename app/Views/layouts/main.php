@@ -56,7 +56,7 @@
                                     </div>
                                     <div tabindex="-1" role="menu" aria-hidden="true"
                                         class="dropdown-menu dropdown-menu dropdown-menu-end">
-                                        <a class="dropdown-item" href="/profile">
+                                        <a class="dropdown-item" href="/settings">
                                             <span><i class="fi fi-rr-user"></i></span>
                                             Profile
                                         </a>
@@ -64,10 +64,7 @@
                                             <span><i class="fi fi-rr-wallet"></i></span>
                                             Budget
                                         </a>
-                                        <a class="dropdown-item" href="/settings">
-                                            <span><i class="fi fi-rr-settings"></i></span>
-                                            Settings
-                                        </a>
+                                       
                                         <form action="/auth/logout" method="post">
                                             <button type="submit" class="dropdown-item logout">
                                                 <span><i class="fi fi-bs-sign-out-alt"></i></span> Logout
@@ -126,14 +123,7 @@
                             <span class="nav-text">Analytics</span>
                         </a>
                     </li>
-                    <li>
-                        <a href="profile">
-                            <span>
-                                <i class="fi fi-rr-user"></i>
-                            </span>
-                            <span class="nav-text">Profile</span>
-                        </a>
-                    </li>
+                  
                     <li>
                         <a href="settings">
                             <span>
@@ -195,7 +185,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div>  
             </div>
             <!-- <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script> -->
             <!-- <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script> -->

@@ -35,7 +35,9 @@
                                         <img src="./images/logo.png" alt="">
                                     </a>
                                 </div>
-                                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown"
+                                    aria-expanded="false" aria-label="Toggle navigation">
                                     <span class="navbar-toggler-icon"></span>
                                 </button>
                                 <div class="collapse navbar-collapse" id="navbarNavDropdown">
@@ -60,7 +62,8 @@
                                         <span class="light"><i class="fi fi-rr-eclipse-alt"></i></span>
                                     </div>
                                     <?php if ($userId): ?>
-                                        <a href="./dashboard" class="btn btn-primary" style="margin-right: 5px;">Dashboard</a>
+                                        <a href="./dashboard" class="btn btn-primary"
+                                            style="margin-right: 5px;">Dashboard</a>
                                     <?php else: ?>
                                         <a href="./signin" class="btn btn-primary" style="margin-right: 5px;">Login</a>
                                         <a href="./signup" class="btn btn-primary">Register</a>
@@ -79,7 +82,8 @@
                         <div class="demo-intro-content">
                             <h1>TrackWise - Personal Finance Management App</h1>
                             <p>Take Control of Your Finances with TrackWise.
-                                <br>Effortlessly track expenses, set budgets, and monitor your financial health—all in one place.
+                                <br>Effortlessly track expenses, set budgets, and monitor your financial health—all in
+                                one place.
                             </p>
                         </div>
                         <div class="demo-intro-btn">
@@ -161,37 +165,48 @@
                 <div>
                     <div class="row row-gap-32">
                         <div class="col-12 col-xl-6">
-                            <div class="bg-img"> <img src="https://avitex.vn/html/finatex/assets/images/component/item1.png" alt=""></div>
+                            <div class="bg-img"> <img
+                                    src="https://avitex.vn/html/finatex/assets/images/component/item1.png" alt=""></div>
                         </div>
                         <div class="col-12 col-xl-6 bg-surface position-relative">
                             <div class="content-main">
                                 <h3>Frequently Asked questions</h3>
                                 <div class="list-question mt-32 position-static">
-                                    <div class="question-item shadow-sm cursor-pointer mt-4 px-4 rounded border border-light">
+                                    <div
+                                        class="question-item shadow-sm cursor-pointer mt-4 px-4 rounded border border-light">
                                         <div class="question-item-main d-flex justify-content-between pt-2 pb-2 mb-0">
-                                            <h4>Which device can I use to enter your service?</h4><i class="fi-rr-plus"></i>
+                                            <h4>Which device can I use to enter your service?</h4><i
+                                                class="fi-rr-plus"></i>
                                         </div>
                                         <div class="content-question">
                                             <div class="border-line"></div>
-                                            <div class="pt-3 pb-3">You can access our service from any device with an internet connection.</div>
+                                            <div class="pt-3 pb-3">You can access our service from any device with an
+                                                internet connection.</div>
                                         </div>
                                     </div>
-                                    <div class="question-item shadow-sm cursor-pointer mt-4 px-4 rounded border border-light">
+                                    <div
+                                        class="question-item shadow-sm cursor-pointer mt-4 px-4 rounded border border-light">
                                         <div class="question-item-main d-flex justify-content-between pt-2 pb-2 mb-0">
                                             <h4>What are your products and services?</h4><i class="fi-rr-plus"></i>
                                         </div>
                                         <div class="content-question">
                                             <div class="border-line"></div>
-                                            <div class="pt-3 pb-3">Our products and services include Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
+                                            <div class="pt-3 pb-3">Our products and services include Lorem ipsum dolor
+                                                sit amet consectetur adipisicing elit.</div>
                                         </div>
                                     </div>
-                                    <div class="question-item shadow-sm cursor-pointer mt-4 px-4 rounded border border-light open">
+                                    <div
+                                        class="question-item shadow-sm cursor-pointer mt-4 px-4 rounded border border-light open">
                                         <div class="question-item-main d-flex justify-content-between pt-2 pb-2 mb-0">
-                                            <h4>Lorem ipsum dolor sit amet consectetur, adipisicing elit?</h4><i class="fi-rr-plus"></i>
+                                            <h4>Lorem ipsum dolor sit amet consectetur, adipisicing elit?</h4><i
+                                                class="fi-rr-plus"></i>
                                         </div>
                                         <div class="content-question">
                                             <div class="border-line"></div>
-                                            <div class="pt-3 pb-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum incidunt maxime ducimus repellendus dolor! Quo cupiditate tenetur enim distinctio nam, eveniet quisquam itaque non corrupti, similique fuga explicabo maxime quis.</div>
+                                            <div class="pt-3 pb-3">Lorem ipsum dolor sit amet consectetur adipisicing
+                                                elit. Ipsum incidunt maxime ducimus repellendus dolor! Quo cupiditate
+                                                tenetur enim distinctio nam, eveniet quisquam itaque non corrupti,
+                                                similique fuga explicabo maxime quis.</div>
                                         </div>
                                     </div>
                                 </div>
@@ -274,7 +289,8 @@
                                 <div class="card-body">
                                     <div class="d-flex justify-content-between">
                                         <div class="d-flex">
-                                            <img src="./images/envato.png" alt="" class="w-auto me-3 rounded-circle" width="50" height="50">
+                                            <img src="./images/envato.png" alt="" class="w-auto me-3 rounded-circle"
+                                                width="50" height="50">
                                             <div>
                                                 <h6>TpRx_Filo</h6>
                                                 <p> Code Quality</p>
@@ -305,7 +321,8 @@
                                 <div class="card-body">
                                     <div class="d-flex justify-content-between">
                                         <div class="d-flex">
-                                            <img src="./images/envato.png" alt="" class="w-auto me-3 rounded-circle" width="50" height="50">
+                                            <img src="./images/envato.png" alt="" class="w-auto me-3 rounded-circle"
+                                                width="50" height="50">
                                             <div>
                                                 <h6>djjaron</h6>
                                                 <p>Feature Availability</p>
@@ -333,7 +350,8 @@
                                 <div class="card-body">
                                     <div class="d-flex justify-content-between">
                                         <div class="d-flex">
-                                            <img src="./images/envato.png" alt="" class="w-auto me-3 rounded-circle" width="50" height="50">
+                                            <img src="./images/envato.png" alt="" class="w-auto me-3 rounded-circle"
+                                                width="50" height="50">
                                             <div>
                                                 <h6> creativeorange3</h6>
                                                 <p> Design Quality</p>
@@ -363,7 +381,8 @@
                                 <div class="card-body">
                                     <div class="d-flex justify-content-between">
                                         <div class="d-flex">
-                                            <img src="./images/envato.png" alt="" class="w-auto me-3 rounded-circle" width="50" height="50">
+                                            <img src="./images/envato.png" alt="" class="w-auto me-3 rounded-circle"
+                                                width="50" height="50">
                                             <div>
                                                 <h6> mciluke123</h6>
                                                 <p>Customer Support</p>
@@ -380,7 +399,8 @@
                                         </div>
                                     </div>
                                     <p>If I could give 6 stars I would. Excellent experience with this template,
-                                        fantastically designed and coded. The author is super helpful and friendly. I would
+                                        fantastically designed and coded. The author is super helpful and friendly. I
+                                        would
                                         recommend this template and this author to a friend for sure. Thanks!</p>
                                 </div>
                             </div>
@@ -392,7 +412,8 @@
                                 <div class="card-body">
                                     <div class="d-flex justify-content-between">
                                         <div class="d-flex">
-                                            <img src="./images/envato.png" alt="" class="w-auto me-3 rounded-circle" width="50" height="50">
+                                            <img src="./images/envato.png" alt="" class="w-auto me-3 rounded-circle"
+                                                width="50" height="50">
                                             <div>
                                                 <h6>Minshan Cui</h6>
                                                 <p>Features avaibility</p>
@@ -410,7 +431,8 @@
                                     </div>
                                     <p>The quality of design is excellent, customizability and
                                         flexibility
-                                        much better than the other products available in the market. I strongly recommend
+                                        much better than the other products available in the market. I strongly
+                                        recommend
                                         the AdminMart to
                                         other buyers.</p>
                                 </div>
@@ -423,7 +445,8 @@
                                 <div class="card-body">
                                     <div class="d-flex justify-content-between">
                                         <div class="d-flex">
-                                            <img src="./images/envato.png" alt="" class="w-auto me-3 rounded-circle" width="50" height="50">
+                                            <img src="./images/envato.png" alt="" class="w-auto me-3 rounded-circle"
+                                                width="50" height="50">
                                             <div>
                                                 <h6>gsotirov</h6>
                                                 <p>Customer Support</p>
@@ -440,7 +463,8 @@
                                         </div>
                                     </div>
                                     <p>Amazing design and even though i purchased it by mistake as i didn't see that is
-                                        react, the owner immediately respond to me and provide me the desired HTML template.
+                                        react, the owner immediately respond to me and provide me the desired HTML
+                                        template.
                                     </p>
                                 </div>
                             </div>
@@ -449,7 +473,52 @@
                 </div>
             </div>
         </div>
+        <div class="row">
+            <div class="col-xl-12">
+                <!-- Contact Form for Reclamation -->
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="card-title">Contact Us</h4>
+                        <?php if (session()->getFlashdata('message')): ?>
+                            <div class="alert alert-success">
+                                <?= session()->getFlashdata('message') ?>
+                            </div>
+                        <?php endif; ?>
 
+                        <?php if (session()->getFlashdata('alert')): ?>
+                            <div class="alert alert-danger">
+                                <?= session()->getFlashdata('alert') ?>
+                            </div>
+                        <?php endif; ?>
+                    </div>
+                    <div class="card-body">
+                        <!-- Reclamation Form -->
+                        <form action="/submit-reclamation" method="post">
+                            <?= csrf_field() ?> <!-- CSRF Token for security -->
+
+                            <div class="form-group">
+                                <label for="subject">subject</label>
+                                <input type="text" class="form-control" id="name" name="subject" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email">email</label>
+                                <input min="10px" type="text" class="form-control" id="email" name="email" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="message">Message </label>
+                                <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
+                            </div><br><br>
+
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-primary">Envoyer</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="customer-support section-padding" id="support">
             <div class="container">
                 <div class="row">
@@ -478,6 +547,7 @@
                 </div>
             </div>
         </div>
+
         <div class="footer-landing">
             <div class="container">
                 <div class="row">
