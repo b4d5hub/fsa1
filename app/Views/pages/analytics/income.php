@@ -43,7 +43,7 @@ Income
             <div class="card-header">
                 <h4 class="card-title">Transaction History</h4>
                 <form action="<?= base_url('/transactions/exportincome') ?>" method="post">
-                    <button type="submit" class="btn btn-danger">Export</button>
+                    <button type="submit" class="btn btn-primary">Export</button>
                 </form>
             </div>
             <div class="card-body">

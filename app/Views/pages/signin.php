@@ -67,7 +67,7 @@
                                         </div>
                                         <div class="col-12 mb-3">
                                             <label class="form-label">Password</label>
-                                            <input name="password" type="text" class="form-control" />
+                                            <input name="password" type="password" class="form-control" />
                                         </div>
                                         
                                     </div>

@@ -56,7 +56,7 @@
                                     </div>
                                     <div tabindex="-1" role="menu" aria-hidden="true"
                                         class="dropdown-menu dropdown-menu dropdown-menu-end">
-                                        <a class="dropdown-item" href="/settings">
+                                        <a class="dropdown-item" href="/settings-profile">
                                             <span><i class="fi fi-rr-user"></i></span>
                                             Profile
                                         </a>

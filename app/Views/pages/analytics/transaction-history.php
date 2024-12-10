@@ -15,7 +15,7 @@ Transactions History
             <div class="card-header">
                 <h4 class="card-title">Transactions History</h4>
                 <form action="<?= base_url('/transactions/export') ?>" method="post">
-                    <button type="submit" class="btn btn-danger">Export</button>
+                    <button type="submit" class="btn btn-warning">Export</button>
                 </form>
             </div>
             <div class="card-body">
@@ -36,7 +36,7 @@ Transactions History
                                 <?php if (!empty($transactions)): ?>
                                     <?php foreach ($transactions as $transaction): ?>
                                         <tr>
-                                        <td class="text-<?= esc($transaction['type']) === 'Income' ? 'success' : 'danger'; ?>">
+                                            <td class="text-<?= esc($transaction['type']) === 'Income' ? 'success' : 'danger'; ?>">
                                                 <?= esc($transaction['type']); ?>
                                             </td>
                                             <td>
@@ -46,7 +46,7 @@ Transactions History
                                                 <?= esc($transaction['description']); ?>
                                             </td>
                                             <td>
-                                                <?= esc(number_format($transaction['amount'],2)); ?>
+                                                <?= esc(number_format($transaction['amount'], 2)); ?>
                                             </td>
                                             <td>
                                                 <?= esc($transaction['currency']); ?>

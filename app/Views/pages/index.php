@@ -30,17 +30,21 @@
                     <div class="col-xl-12">
                         <div class="navigation">
                             <nav class="navbar navbar-expand-lg">
+                                <!-- Brand Logo -->
                                 <div class="brand-logo m-0">
                                     <a href="/">
                                         <img src="./images/logo.png" alt="">
                                     </a>
                                 </div>
-                                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown"
-                                    aria-expanded="false" aria-label="Toggle navigation">
+
+                                <!-- Burger Button -->
+                                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                                     <span class="navbar-toggler-icon"></span>
                                 </button>
+
+                                <!-- Navbar Collapse -->
                                 <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                                    <!-- Navigation Links -->
                                     <ul class="navbar-nav ms-auto demo-nav">
                                         <li class="nav-item">
                                             <a class="nav-link" href="#intro">Home</a>
@@ -49,25 +53,29 @@
                                             <a class="nav-link" href="#features">Features</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="#review">Review</a>
-                                        </li>
-                                        <li class="nav-item">
                                             <a class="nav-link" href="#faq">FAQ</a>
                                         </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#review">Reviews</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#contact-us">Contact</a>
+                                        </li>
                                     </ul>
-                                </div>
-                                <div class="header-right">
-                                    <div class="dark-light-toggle ps-2" onclick="themeToggle()">
-                                        <span class="dark"><i class="fi fi-rr-eclipse-alt"></i></span>
-                                        <span class="light"><i class="fi fi-rr-eclipse-alt"></i></span>
+
+                                    <!-- Login/Register or Dashboard Buttons -->
+                                    <div class="header-right d-flex mt-3 mt-lg-0 justify-content-center">
+                                        <!-- <div class="dark-light-toggle ps-2 me-3" onclick="themeToggle()">
+                                            <span class="dark"><i class="fi fi-rr-eclipse-alt"></i></span>
+                                            <span class="light"><i class="fi fi-rr-eclipse-alt"></i></span>
+                                        </div> -->
+                                        <?php if ($userId): ?>
+                                            <a href="./dashboard" class="btn btn-primary me-2">Dashboard</a>
+                                        <?php else: ?>
+                                            <a href="./signin" class="btn btn-primary me-2">Login</a>
+                                            <a href="./signup" class="btn btn-primary">Register</a>
+                                        <?php endif; ?>
                                     </div>
-                                    <?php if ($userId): ?>
-                                        <a href="./dashboard" class="btn btn-primary"
-                                            style="margin-right: 5px;">Dashboard</a>
-                                    <?php else: ?>
-                                        <a href="./signin" class="btn btn-primary" style="margin-right: 5px;">Login</a>
-                                        <a href="./signup" class="btn btn-primary">Register</a>
-                                    <?php endif; ?>
                                 </div>
                             </nav>
                         </div>
@@ -473,48 +481,52 @@
                 </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-xl-12">
-                <!-- Contact Form for Reclamation -->
-                <div class="card">
-                    <div class="card-header">
-                        <h4 class="card-title">Contact Us</h4>
-                        <?php if (session()->getFlashdata('message')): ?>
-                            <div class="alert alert-success">
-                                <?= session()->getFlashdata('message') ?>
+        <div class="contact-us" id="contact-us">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <!-- Contact Form for Reclamation -->
+                        <div class="card">
+                            <div class="card-header">
+                                <h4 class="card-title">Contact Us</h4>
                             </div>
-                        <?php endif; ?>
+                            <div class="card-body">
+                                <?php if (session()->getFlashdata('message')): ?>
+                                    <div class="alert alert-success">
+                                        <?= session()->getFlashdata('message') ?>
+                                    </div>
+                                <?php endif; ?>
 
-                        <?php if (session()->getFlashdata('alert')): ?>
-                            <div class="alert alert-danger">
-                                <?= session()->getFlashdata('alert') ?>
+                                <?php if (session()->getFlashdata('alert')): ?>
+                                    <div class="alert alert-danger">
+                                        <?= session()->getFlashdata('alert') ?>
+                                    </div>
+                                <?php endif; ?>
+                                <!-- Reclamation Form -->
+                                <form action="/submit-reclamation" method="post">
+                                    <?= csrf_field() ?> <!-- CSRF Token for security -->
+
+                                    <div class="col-12 mb-3">
+                                        <label for="subject">Subject</label>
+                                        <input type="text" class="form-control" id="name" name="subject" required>
+                                    </div>
+
+                                    <div class="col-12 mb-3">
+                                        <label for="email">Email</label>
+                                        <input min="10px" type="text" class="form-control" id="email" name="email" required>
+                                    </div>
+
+                                    <div class="col-12 mb-3">
+                                        <label for="message">Message </label>
+                                        <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
+                                    </div><br><br>
+
+                                    <div class="col-12 mb-3">
+                                        <button type="submit" class="btn btn-primary">Envoyer</button>
+                                    </div>
+                                </form>
                             </div>
-                        <?php endif; ?>
-                    </div>
-                    <div class="card-body">
-                        <!-- Reclamation Form -->
-                        <form action="/submit-reclamation" method="post">
-                            <?= csrf_field() ?> <!-- CSRF Token for security -->
-
-                            <div class="form-group">
-                                <label for="subject">subject</label>
-                                <input type="text" class="form-control" id="name" name="subject" required>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="email">email</label>
-                                <input min="10px" type="text" class="form-control" id="email" name="email" required>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="message">Message </label>
-                                <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
-                            </div><br><br>
-
-                            <div class="form-group">
-                                <button type="submit" class="btn btn-primary">Envoyer</button>
-                            </div>
-                        </form>
+                        </div>
                     </div>
                 </div>
             </div>

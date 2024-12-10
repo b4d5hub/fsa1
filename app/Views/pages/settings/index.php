@@ -56,7 +56,7 @@ Settings - Account
             </div>
         </div>
     </div>
-    <div class="col-xl-8">
+    <div class="col-12">
                 <div class="card">
                     <div class="card-body">
                         <div class="d-flex align-items-center"><span class="me-3 icon-circle bg-warning text-white">

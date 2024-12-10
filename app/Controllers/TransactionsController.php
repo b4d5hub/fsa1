@@ -37,6 +37,7 @@ class TransactionsController extends BaseController
         return view('pages/expenses', ['categories' => $categories, 'transactions' => $transactions]);
     }
 
+
     public function addTransaction()
     {
         $userId = $this->session->get('user_id');
