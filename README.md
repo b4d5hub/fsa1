@@ -12,6 +12,10 @@ An efficient and user-friendly expense management system built using CodeIgniter
 - **Analytics**: Visual representation of income and expenses trends.
 - **Profile Management**: Edit and update user profile information.
 
+## Demo
+
+Check out the live demo of the application: https://trackwise.ouajih.com/
+
 ## Installation
 
 Follow these steps to set up the project on your local environment:
